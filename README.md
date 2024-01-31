@@ -2,6 +2,8 @@
 
 # Getting Started
 ```bash
+npx degit mmilojevic-dev/default-react-starter
+cd project
 yarn install
 yarn dev
 ```
