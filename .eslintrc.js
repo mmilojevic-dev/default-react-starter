@@ -45,6 +45,12 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'react/prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'prettier/prettier': [
+      'error',
+      {
+        'endOfLine': 'auto'
+      }
+    ]
   }
 }
