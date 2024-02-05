@@ -10,7 +10,7 @@ module.exports = {
   arrowParens: 'always',
   jsxBracketSameLine: false,
   endOfLine: 'lf',
-  tailwindConfig: './tailwind.config.js',
+  tailwindConfig: './tailwind.config.ts',
   overrides: [
     {
       files: '.prettierrc',
@@ -19,5 +19,5 @@ module.exports = {
       },
     },
   ],
-  plugins: [require('prettier-plugin-tailwindcss')],
+  plugins: ['prettier-plugin-tailwindcss'],
 };

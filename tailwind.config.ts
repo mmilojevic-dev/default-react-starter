@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
@@ -82,7 +84,6 @@ module.exports = {
       'h1-mobile': [
         '2rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.3',
           letterSpacing: '-0.01562em',
           fontWeight: '700'
@@ -91,7 +92,6 @@ module.exports = {
       h2: [
         '2rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.25',
           letterSpacing: '-0.00833em',
           fontWeight: '700'
@@ -100,7 +100,6 @@ module.exports = {
       'h2-mobile': [
         '1.75rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.3',
           letterSpacing: '-0.00833em',
           fontWeight: '700'
@@ -109,7 +108,6 @@ module.exports = {
       h3: [
         '1.75rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.3',
           letterSpacing: '0em',
           fontWeight: '700'
@@ -118,7 +116,6 @@ module.exports = {
       'h3-mobile': [
         '1.5rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.35',
           letterSpacing: '0em',
           fontWeight: '700'
@@ -127,7 +124,6 @@ module.exports = {
       h4: [
         '1.5rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.35',
           letterSpacing: '0.00735em',
           fontWeight: '700'
@@ -136,7 +132,6 @@ module.exports = {
       'h4-mobile': [
         '1.25rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.4',
           letterSpacing: '0.00735em',
           fontWeight: '700'
@@ -145,7 +140,6 @@ module.exports = {
       h5: [
         '1.25rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.4',
           letterSpacing: '0em',
           fontWeight: '700'
@@ -154,7 +148,6 @@ module.exports = {
       'h5-mobile': [
         '1rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.45',
           letterSpacing: '0em',
           fontWeight: '700'
@@ -163,7 +156,6 @@ module.exports = {
       h6: [
         '1rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.5',
           letterSpacing: '0.00938em',
           fontWeight: '700'
@@ -172,7 +164,6 @@ module.exports = {
       'h6-mobile': [
         '0.875rem',
         {
-          fontFamily: "'Merriweather', serif",
           lineHeight: '1.6',
           letterSpacing: '0.00938em',
           fontWeight: '700'
@@ -181,7 +172,6 @@ module.exports = {
       body1: [
         '1rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.5',
           letterSpacing: '0.00938em',
           fontWeight: '400'
@@ -190,7 +180,6 @@ module.exports = {
       'body1-mobile': [
         '0.875rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.6',
           letterSpacing: '0.00938em',
           fontWeight: '400'
@@ -199,7 +188,6 @@ module.exports = {
       body2: [
         '0.875rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.6',
           letterSpacing: '0.01071em',
           fontWeight: '400'
@@ -208,7 +196,6 @@ module.exports = {
       'body2-mobile': [
         '0.8125rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.65',
           letterSpacing: '0.01071em',
           fontWeight: '400'
@@ -217,7 +204,6 @@ module.exports = {
       body3: [
         '0.8125rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.65',
           letterSpacing: '0.0125em',
           fontWeight: '400'
@@ -226,7 +212,6 @@ module.exports = {
       'body3-mobile': [
         '0.75rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.7',
           letterSpacing: '0.0125em',
           fontWeight: '400'
@@ -235,7 +220,6 @@ module.exports = {
       body4: [
         '0.75rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.7',
           letterSpacing: '0.01429em',
           fontWeight: '400'
@@ -244,7 +228,6 @@ module.exports = {
       'body4-mobile': [
         '0.6875rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.75',
           letterSpacing: '0.01429em',
           fontWeight: '400'
@@ -253,7 +236,6 @@ module.exports = {
       body5: [
         '0.6875rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.75',
           letterSpacing: '0.01607em',
           fontWeight: '400'
@@ -262,7 +244,6 @@ module.exports = {
       'body5-mobile': [
         '0.625rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.8',
           letterSpacing: '0.01607em',
           fontWeight: '400'
@@ -271,7 +252,6 @@ module.exports = {
       body6: [
         '0.625rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.8',
           letterSpacing: '0.01786em',
           fontWeight: '400'
@@ -280,7 +260,6 @@ module.exports = {
       'body6-mobile': [
         '0.5625rem',
         {
-          fontFamily: "'Open Sans', sans-serif",
           lineHeight: '1.85',
           letterSpacing: '0.01786em',
           fontWeight: '400'
@@ -299,8 +278,10 @@ module.exports = {
       base: '0.5rem', // A middle-ground for rounded corners, could be used on cards or modals
       lg: '1rem', // For more pronounced rounding, useful for bigger UI elements or feature highlights
       full: '9999px', // For creating rounded avatars or other fully rounded elements
-      none: 0 // For square corners
+      none: '0' // For square corners
     }
   },
   plugins: [require('@tailwindcss/forms')]
 }
+
+export default config
