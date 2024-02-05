@@ -1,6 +1,6 @@
 # React Starter
 
-## A boilerplate built to easily start with client-rendered app development with Vite.
+## A boilerplate built to easily start with client-rendered React app development with Vite.
 
 # Getting Started
 
