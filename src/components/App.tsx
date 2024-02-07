@@ -1,18 +1,26 @@
-import cx from 'classnames'
+import ReactSVG from '/react.svg'
+import CountBtn from '@/components/CountBtn'
+import { Badge } from '@/components/ui/badge'
 
-const App = () => {
+function App() {
   return (
-    <div
-      className={cx(
-        'flex',
-        'items-center',
-        'justify-center',
-        'bg-primary',
-        'text-white'
-      )}
-    >
-      React App Starter
-    </div>
+    <main className="flex h-screen flex-col items-center justify-center">
+      <div className="gap-y-5 flex flex-col items-center">
+        <div className="gap-x-5 inline-flex items-center">
+          <img src={ReactSVG} alt="React Logo" className="w-32" />
+          <span className="text-6xl">+</span>
+          <img src={'/vite.svg'} alt="Vite Logo" className="w-32" />
+        </div>
+        <a
+          href="https://ui.shadcn.com"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          <Badge variant="outline">shadcn/ui</Badge>
+        </a>
+        <CountBtn />
+      </div>
+    </main>
   )
 }
 

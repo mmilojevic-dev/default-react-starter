@@ -37,7 +37,6 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     'react/no-unescaped-entities': ['off'],
     'react/jsx-uses-react': ['off'],
-    'react/jsx-props-no-spreading': ['warn'],
     'tailwindcss/no-custom-classname': 'warn',
     'tailwindcss/no-contradicting-classname': 'error',
     'tailwindcss/classnames-order': 'warn',
@@ -49,7 +48,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        'endOfLine': 'auto'
+        endOfLine: 'auto'
       }
     ]
   }
