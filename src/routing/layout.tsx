@@ -6,7 +6,7 @@ import { ThemeToggle } from '../components/compound/theme-toggle'
 
 export const Layout: React.FC = () => {
   return (
-    <div className="h-screen gap-4 p-4 md:grid md:grid-cols-4 md:grid-rows-5">
+    <div className="h-screen gap-4 md:grid md:grid-cols-4 md:grid-rows-5">
       <SideNavigationBar>
         <ThemeToggle />
         <Navigation />

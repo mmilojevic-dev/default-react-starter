@@ -7,7 +7,7 @@ export const Navigation: React.FC = () => {
   const { pathname } = useLocation()
   const routesKeys = Object.keys(ROUTES)
   return (
-    <nav className="mt-5">
+    <nav className="md:mt-5">
       <ul className="flex items-center justify-center gap-5 md:flex-col">
         {routesKeys.map((key: string) => {
           const route = ROUTES[key as keyof typeof ROUTES]

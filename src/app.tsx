@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/contexts/theme-context'
 
 import { Router } from './routing/router'
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
@@ -13,3 +13,5 @@ export const App: React.FC = () => {
     </ThemeProvider>
   )
 }
+
+export default App
