@@ -1,13 +1,8 @@
 import React from 'react'
 
 import { THEME } from '@/config'
-import { useLocalStorageState } from '@/hooks/use-local-storage'
-import { ThemeType } from '@/models'
-
-interface ThemeContextInterface {
-  theme: ThemeType
-  setTheme: (theme: ThemeType) => void
-}
+import { useThemeContext } from '@/hooks/use-theme-context'
+import { ThemeContextInterface, ThemeType } from '@/models'
 
 const initialState: ThemeContextInterface = {
   theme: THEME.INITIAL,
@@ -20,35 +15,15 @@ interface ThemeProviderPropsInterface {
   storageKey?: string
 }
 
-const ThemeContext = React.createContext<ThemeContextInterface>(initialState)
+export const ThemeContext =
+  React.createContext<ThemeContextInterface>(initialState)
 
 export const ThemeProvider: React.FC<ThemeProviderPropsInterface> = ({
   children,
-  defaultTheme = THEME.INITIAL,
-  storageKey = 'theme'
+  storageKey = THEME.LOCAL_STORAGE_KEY,
+  defaultTheme = THEME.INITIAL
 }) => {
-  const [theme, setTheme] = useLocalStorageState<ThemeType>(
-    storageKey,
-    defaultTheme
-  )
-
-  React.useEffect(() => {
-    const root = window.document.documentElement
-
-    root.classList.remove('light', 'dark')
-
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light'
-
-      root.classList.add(systemTheme)
-      return
-    }
-
-    root.classList.add(theme)
-  }, [theme])
+  const { theme, setTheme } = useThemeContext(storageKey, defaultTheme)
 
   return (
     <ThemeContext.Provider
@@ -60,12 +35,4 @@ export const ThemeProvider: React.FC<ThemeProviderPropsInterface> = ({
       {children}
     </ThemeContext.Provider>
   )
-}
-
-export const useThemeContext = (): ThemeContextInterface => {
-  const context = React.useContext(ThemeContext)
-  if (!context) {
-    throw new Error('useThemeContext must be used within a ThemeProvider')
-  }
-  return context
 }
