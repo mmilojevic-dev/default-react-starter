@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { THEME } from '@/config'
-import { useThemeContext } from '@/contexts/theme-context'
+import { useThemeContext } from '@/hooks/use-theme-context'
 import { ThemeEnum } from '@/models'
 
 export const ThemeToggle: React.FC = () => {
@@ -27,15 +27,6 @@ export const ThemeToggle: React.FC = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {/* {(Object.keys(ThemeEnum) as (keyof typeof ThemeEnum)[]).map((key) => (
-          <DropdownMenuItem
-            key={key}
-            className="capitalize"
-            onClick={() => setTheme(key as ThemeType)}
-          >
-            {key}
-          </DropdownMenuItem>
-        ))} */}
         <DropdownMenuItem
           className="capitalize"
           onClick={() => setTheme(ThemeEnum.Light)}

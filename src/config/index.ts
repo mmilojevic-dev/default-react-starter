@@ -25,7 +25,10 @@ export const ROUTES = {
 
 export const THEME = {
   TOGGLER_LABEL: 'Toggle theme',
-  INITIAL: ThemeEnum.System
+  INITIAL: ThemeEnum.System,
+  LOCAL_STORAGE_KEY: 'theme',
+  OUT_OF_PROVIDER_USAGE_ERROR:
+    'useThemeContext must be used within a ThemeProvider'
 }
 
 export const HOME = {
