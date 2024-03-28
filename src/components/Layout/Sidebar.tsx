@@ -1,8 +1,13 @@
 import { Logo, Navigation } from '@/components'
+import { cn } from '@/utils'
 
-export const Sidebar = () => {
+type SidebarProps = {
+  className: string
+}
+
+export const Sidebar = ({ className }: SidebarProps) => {
   return (
-    <div className="hidden bg-card md:flex md:shrink-0">
+    <div className={cn('h-full bg-card', className)}>
       <div className="flex w-64 flex-col">
         <div className="flex h-0 flex-1 flex-col">
           <div className="flex h-16 shrink-0 items-center bg-background/50 px-4">
