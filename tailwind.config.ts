@@ -68,6 +68,25 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      backdropBrightness: {
+        5: '.05',
+        10: '.1',
+        15: '.15',
+        20: '.2',
+        25: '.25',
+        30: '.3',
+        35: '.35',
+        40: '.4',
+        45: '.45',
+        55: '.55',
+        60: '.6',
+        65: '.65',
+        70: '.70',
+        80: '.80',
+        85: '.85',
+        90: '.90',
+        95: '.95'
       }
     }
   },

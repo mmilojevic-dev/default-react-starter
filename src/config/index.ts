@@ -1,4 +1,4 @@
-import { ThemeEnum } from '@/models'
+import { ThemeEnum } from '@/types'
 
 export const APP_DEFAULT = {
   AUTHOR: 'Miloš Milojević',
@@ -20,6 +20,16 @@ export const ROUTES = {
     LABEL: 'About',
     PATH: '/about',
     NAV_ITEM_HIDDEN: false
+  },
+  NOT_FOUND: {
+    LABEL: '',
+    PATH: '/404',
+    NAV_ITEM_HIDDEN: true
+  },
+  INTERNAL_SERVER: {
+    LABEL: '',
+    PATH: '/500',
+    NAV_ITEM_HIDDEN: true
   }
 }
 
@@ -36,8 +46,16 @@ export const HOME = {
 }
 
 export const ABOUT = {
-  AUTHOR: APP_DEFAULT.AUTHOR,
-  VERSION: APP_DEFAULT.VERSION,
-  APP_NAME: APP_DEFAULT.TITLE,
-  APP_DESCRIPTION: APP_DEFAULT.DESCRIPTION
+  TITLE: 'About',
+  CONTENT: {
+    AUTHOR: APP_DEFAULT.AUTHOR,
+    VERSION: APP_DEFAULT.VERSION,
+    APP_NAME: APP_DEFAULT.TITLE,
+    APP_DESCRIPTION: APP_DEFAULT.DESCRIPTION
+  }
+}
+
+export const ERRORS = {
+  NOT_FOUND_MESSAGE: '404 - Not Found.',
+  INTERNAL_SERVER_MESSAGE: '500 - Internal Server Error.'
 }

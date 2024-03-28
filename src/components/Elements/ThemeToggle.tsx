@@ -1,15 +1,15 @@
 import { Moon, Sun } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/Elements/Button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+} from '@/components/Elements/DropdownMenu'
 import { THEME } from '@/config'
 import { useThemeContext } from '@/hooks/use-theme-context'
-import { ThemeEnum } from '@/models'
+import { ThemeEnum } from '@/types'
 
 export const ThemeToggle: React.FC = () => {
   const { setTheme } = useThemeContext()

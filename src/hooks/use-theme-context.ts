@@ -2,7 +2,7 @@ import React from 'react'
 
 import { THEME } from '@/config'
 import { ThemeContext } from '@/contexts/theme-context'
-import { ThemeContextInterface, ThemeEnum, ThemeType } from '@/models'
+import { ThemeContextInterface, ThemeEnum, ThemeType } from '@/types'
 
 import { useLocalStorageState } from './use-local-storage'
 

@@ -5,46 +5,47 @@
 @layer base {
   :root {
     --background: 206 98% 95%;
-    --foreground: 206 5% 10%;
-    --card: 206 50% 90%;
-    --card-foreground: 206 5% 15%;
-    --popover: 206 98% 95%;
-    --popover-foreground: 206 98% 10%;
-    --primary: 206 79% 21%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 206 30% 70%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 168 30% 85%;
-    --muted-foreground: 206 5% 40%;
-    --accent: 168 30% 80%;
-    --accent-foreground: 206 5% 15%;
-    --destructive: 0 98% 48%;
-    --destructive-foreground: 206 5% 90%;
-    --border: 206 30% 50%;
-    --input: 206 30% 48%;
-    --ring: 206 79% 21%;
+    --foreground: 206 20% 20%; /* Poboljšan kontrast za tekst */
+    --card: 206 80% 98%; /* Malo svetlije za bolje razlikovanje */
+    --card-foreground: 206 30% 15%; /* Tamniji tekst za bolju čitljivost */
+    --popover: 206 90% 100%; /* Svetao, za izdvajanje bez ometanja */
+    --popover-foreground: 206 25% 20%; /* Kontrastan tekst unutar popover-a */
+    --primary: 206 100% 35%; /* Jača, izražajnija primarna boja */
+    --primary-foreground: 0 0% 100%; /* Beli tekst za visok kontrast */
+    --secondary: 206 50% 60%; /* Suptilnija, ali razlikovita */
+    --secondary-foreground: 0 0% 0%; /* Crni tekst za bolju vidljivost */
+    --muted: 168 20% 90%;
+    --muted-foreground: 206 40% 30%;
+    --accent: 168 60% 70%;
+    --accent-foreground: 206 50% 10%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 206 60% 95%;
+    --border: 206 40% 80%;
+    --input: 206 40% 90%;
+    --ring: 206 100% 40%;
     --radius: 0.5rem;
   }
+
   .dark {
-    --background: 206 50% 10%;
-    --foreground: 206 5% 90%;
-    --card: 206 50% 10%;
-    --card-foreground: 206 5% 90%;
-    --popover: 206 50% 5%;
-    --popover-foreground: 206 5% 90%;
-    --primary: 206 79% 21%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 206 30% 20%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 168 30% 25%;
-    --muted-foreground: 206 5% 60%;
-    --accent: 168 30% 25%;
-    --accent-foreground: 206 5% 90%;
-    --destructive: 0 98% 48%;
-    --destructive-foreground: 206 5% 90%;
-    --border: 206 30% 48%;
-    --input: 206 30% 48%;
-    --ring: 206 79% 21%;
+    --background: 206 30% 12%;
+    --foreground: 206 60% 95%; /* Svetao tekst za čitljivost */
+    --card: 206 45% 18%; /* Diskretno izdvajanje kartica */
+    --card-foreground: 206 70% 95%; /* Jasniji tekst na karticama */
+    --popover: 206 40% 15%; /* Tamniji, za fokus na sadržaj */
+    --popover-foreground: 206 80% 95%; /* Svetao tekst unutar popover-a */
+    --primary: 206 100% 45%; /* Jača primarna boja za tamni mod */
+    --primary-foreground: 0 0% 100%; /* Očuvanje visokog kontrasta */
+    --secondary: 206 60% 30%; /* Tamniji sekundarni ton */
+    --secondary-foreground: 0 0% 100%; /* Beli tekst za sekundarne elemente */
+    --muted: 168 25% 35%;
+    --muted-foreground: 206 70% 90%;
+    --accent: 168 50% 40%;
+    --accent-foreground: 206 80% 95%;
+    --destructive: 0 100% 55%;
+    --destructive-foreground: 206 80% 95%;
+    --border: 206 50% 30%;
+    --input: 206 50% 25%;
+    --ring: 206 100% 50%;
     --radius: 0.5rem;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { THEME } from '@/config'
 import { useThemeContext } from '@/hooks/use-theme-context'
-import { ThemeContextInterface, ThemeType } from '@/models'
+import { ThemeContextInterface, ThemeType } from '@/types'
 
 const initialState: ThemeContextInterface = {
   theme: THEME.INITIAL,
