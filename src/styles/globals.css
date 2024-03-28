@@ -55,6 +55,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply m-0 bg-background font-sans text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
   }
 }

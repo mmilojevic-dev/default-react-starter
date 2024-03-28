@@ -1,3 +1,5 @@
+import { HomeIcon, InfoIcon } from 'lucide-react'
+
 import { ThemeEnum } from '@/types'
 
 export const APP_DEFAULT = {
@@ -12,24 +14,28 @@ export const APP_DEFAULT = {
 
 export const ROUTES = {
   HOME: {
-    LABEL: 'Home',
-    PATH: '/',
-    NAV_ITEM_HIDDEN: false
+    label: 'Home',
+    path: '/',
+    navItemHidden: false,
+    icon: HomeIcon
   },
   ABOUT: {
-    LABEL: 'About',
-    PATH: '/about',
-    NAV_ITEM_HIDDEN: false
+    label: 'About',
+    path: '/about',
+    navItemHidden: false,
+    icon: InfoIcon
   },
   NOT_FOUND: {
-    LABEL: '',
-    PATH: '/404',
-    NAV_ITEM_HIDDEN: true
+    label: '',
+    path: '/404',
+    navItemHidden: true,
+    icon: null
   },
   INTERNAL_SERVER: {
-    LABEL: '',
-    PATH: '/500',
-    NAV_ITEM_HIDDEN: true
+    label: '',
+    path: '/500',
+    navItemHidden: true,
+    icon: null
   }
 }
 
