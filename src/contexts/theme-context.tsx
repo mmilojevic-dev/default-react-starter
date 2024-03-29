@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { THEME } from '@/config'
-import { useThemeContext } from '@/hooks/use-theme-context'
+import { useThemeContext } from '@/hooks/useThemeContext'
 import { ThemeContextInterface, ThemeType } from '@/types'
 
 const initialState: ThemeContextInterface = {

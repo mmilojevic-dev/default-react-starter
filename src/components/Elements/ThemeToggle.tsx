@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/Elements/DropdownMenu'
 import { THEME } from '@/config'
-import { useThemeContext } from '@/hooks/use-theme-context'
+import { useThemeContext } from '@/hooks/useThemeContext'
 import { ThemeEnum } from '@/types'
 
 export const ThemeToggle: React.FC = () => {

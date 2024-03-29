@@ -4,7 +4,7 @@ import { THEME } from '@/config'
 import { ThemeContext } from '@/contexts/theme-context'
 import { ThemeContextInterface, ThemeEnum, ThemeType } from '@/types'
 
-import { useLocalStorageState } from './use-local-storage'
+import { useLocalStorageState } from './useLocalStorage'
 
 export const useThemeContext = (
   storageKey = THEME.LOCAL_STORAGE_KEY,
