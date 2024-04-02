@@ -1,9 +1,9 @@
-import * as React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
 import { ErrorFallback } from '@/components'
-import { ThemeProvider } from '@/contexts/theme'
+import { store } from '@/store'
 
 type AppProviderProps = {
   children: React.ReactNode
@@ -11,10 +11,10 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-    <ThemeProvider>
+    <Provider store={store}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <BrowserRouter>{children}</BrowserRouter>
       </ErrorBoundary>
-    </ThemeProvider>
+    </Provider>
   )
 }

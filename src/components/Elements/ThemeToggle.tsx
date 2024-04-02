@@ -1,4 +1,6 @@
 import { Moon, Sun } from 'lucide-react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from '@/components/Elements/Button'
 import {
@@ -8,11 +10,18 @@ import {
   DropdownMenuTrigger
 } from '@/components/Elements/DropdownMenu'
 import { THEME } from '@/config'
-import { useThemeContext } from '@/hooks/useThemeContext'
+import { AppDispatch, RootState } from '@/store'
+import { setTheme } from '@/store/themeSlice'
 import { ThemeEnum } from '@/types'
+import { applyTheme } from '@/utils/theme'
 
 export const ThemeToggle: React.FC = () => {
-  const { setTheme } = useThemeContext()
+  const theme = useSelector((state: RootState) => state.theme.activeTheme)
+  const dispatch = useDispatch<AppDispatch>()
+
+  React.useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   return (
     <DropdownMenu>
@@ -30,19 +39,19 @@ export const ThemeToggle: React.FC = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => setTheme(ThemeEnum.Light)}
+          onClick={() => dispatch(setTheme(ThemeEnum.Light))}
         >
           {ThemeEnum.Light}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => setTheme(ThemeEnum.Dark)}
+          onClick={() => dispatch(setTheme(ThemeEnum.Dark))}
         >
           {ThemeEnum.Dark}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => setTheme(ThemeEnum.System)}
+          onClick={() => dispatch(setTheme(ThemeEnum.System))}
         >
           {ThemeEnum.System}
         </DropdownMenuItem>
