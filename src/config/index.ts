@@ -9,7 +9,9 @@ export const APP_DEFAULT = {
     'A template built to easily start with client-rendered React app development with Vite.',
   LABGUAGE: 'en',
   TITLE: 'Default React Template',
-  VERSION: '1.0.0'
+  VERSION: '1.0.0',
+  CLIENT_URL: process.env.REACT_APP_CLIENT_URL as string,
+  API_URL: process.env.REACT_APP_API_URL as string
 }
 
 export const ROUTES = {
@@ -63,5 +65,6 @@ export const ABOUT = {
 
 export const ERRORS = {
   NOT_FOUND_MESSAGE: '404 - Not Found.',
-  INTERNAL_SERVER_MESSAGE: '500 - Internal Server Error.'
+  INTERNAL_SERVER_MESSAGE: '500 - Internal Server Error.',
+  GENERAL_NETWORK_ERROR: 'Network Error'
 }

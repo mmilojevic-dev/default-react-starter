@@ -22,8 +22,8 @@ export const InputField = ({
         type={type}
         className={cn(
           `block w-full appearance-none rounded-md border px-3 py-2
-            placeholder:text-muted-foreground focus:border-accent focus:outline-none
-            focus:ring-accent sm:text-sm`,
+          placeholder:text-muted-foreground focus:border-accent focus:outline-none
+          focus:ring-accent sm:text-sm`,
           className
         )}
         {...registration}

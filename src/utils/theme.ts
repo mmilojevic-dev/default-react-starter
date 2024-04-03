@@ -1,6 +1,6 @@
-import { ThemeEnum } from '@/types'
+import { ThemeEnum, ThemeType } from '@/types'
 
-export const applyTheme = (theme: ThemeEnum) => {
+export const applyTheme = (theme: ThemeType) => {
   const root = window.document.documentElement
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
     ? ThemeEnum.Dark
