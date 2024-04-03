@@ -1,17 +1,12 @@
-import { BrowserRouter } from 'react-router-dom'
+import 'styles/globals.css'
 
-import { ThemeProvider } from '@/contexts/theme-context'
+import { AppProvider } from './providers/app'
+import { AppRoutes } from './routes'
 
-import { Router } from './routing/router'
-
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    </ThemeProvider>
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   )
 }
-
-export default App

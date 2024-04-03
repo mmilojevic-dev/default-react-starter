@@ -1,4 +1,6 @@
-import { ThemeEnum } from '@/models'
+import { HomeIcon, InfoIcon } from 'lucide-react'
+
+import { ThemeEnum } from '@/types'
 
 export const APP_DEFAULT = {
   AUTHOR: 'Miloš Milojević',
@@ -7,19 +9,35 @@ export const APP_DEFAULT = {
     'A template built to easily start with client-rendered React app development with Vite.',
   LABGUAGE: 'en',
   TITLE: 'Default React Template',
-  VERSION: '1.0.0'
+  VERSION: '1.0.0',
+  CLIENT_URL: process.env.REACT_APP_CLIENT_URL as string,
+  API_URL: process.env.REACT_APP_API_URL as string
 }
 
 export const ROUTES = {
   HOME: {
-    LABEL: 'Home',
-    PATH: '/',
-    NAV_ITEM_HIDDEN: false
+    label: 'Home',
+    path: '/',
+    navItemHidden: false,
+    icon: HomeIcon
   },
   ABOUT: {
-    LABEL: 'About',
-    PATH: '/about',
-    NAV_ITEM_HIDDEN: false
+    label: 'About',
+    path: '/about',
+    navItemHidden: false,
+    icon: InfoIcon
+  },
+  NOT_FOUND: {
+    label: '',
+    path: '/404',
+    navItemHidden: true,
+    icon: null
+  },
+  INTERNAL_SERVER: {
+    label: '',
+    path: '/500',
+    navItemHidden: true,
+    icon: null
   }
 }
 
@@ -36,8 +54,17 @@ export const HOME = {
 }
 
 export const ABOUT = {
-  AUTHOR: APP_DEFAULT.AUTHOR,
-  VERSION: APP_DEFAULT.VERSION,
-  APP_NAME: APP_DEFAULT.TITLE,
-  APP_DESCRIPTION: APP_DEFAULT.DESCRIPTION
+  TITLE: 'About',
+  CONTENT: {
+    AUTHOR: APP_DEFAULT.AUTHOR,
+    VERSION: APP_DEFAULT.VERSION,
+    APP_NAME: APP_DEFAULT.TITLE,
+    APP_DESCRIPTION: APP_DEFAULT.DESCRIPTION
+  }
+}
+
+export const ERRORS = {
+  NOT_FOUND_MESSAGE: '404 - Not Found.',
+  INTERNAL_SERVER_MESSAGE: '500 - Internal Server Error.',
+  GENERAL_NETWORK_ERROR: 'Network Error'
 }

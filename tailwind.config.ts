@@ -56,18 +56,32 @@ const config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
+        slideIn: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' }
         }
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        slideIn: 'slideIn 0.5s ease-out'
+      },
+      backdropBrightness: {
+        5: '.05',
+        10: '.1',
+        15: '.15',
+        20: '.2',
+        25: '.25',
+        30: '.3',
+        35: '.35',
+        40: '.4',
+        45: '.45',
+        55: '.55',
+        60: '.6',
+        65: '.65',
+        70: '.70',
+        80: '.80',
+        85: '.85',
+        90: '.90',
+        95: '.95'
       }
     }
   },
