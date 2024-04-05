@@ -1,16 +1,18 @@
 import { NavLink as RouterNavLink, useLocation } from 'react-router-dom'
 
-import { Route } from '@/types'
+import { ROUTES } from '@/config'
 import { cn } from '@/utils'
 
+type ProtectedRouteKey = keyof typeof ROUTES.PROTECTED
+
 type NavLinkProps = {
-  route: Route
+  route: (typeof ROUTES.PROTECTED)[ProtectedRouteKey]
 }
 
 export const NavLink = ({ route }: NavLinkProps) => {
   const { pathname } = useLocation()
 
-  const isActive = route.path === pathname
+  const isActive = route.PATH === pathname
   const linkClasses = cn(
     isActive ? 'bg-background/50 text-foreground' : 'text-muted-foreground/75',
     `group flex uppercase tracking-widest items-center rounded-md p-2 font-medium hover:text-foreground`
@@ -21,9 +23,9 @@ export const NavLink = ({ route }: NavLinkProps) => {
   )
 
   return (
-    <RouterNavLink className={linkClasses} to={route.path}>
-      {route.icon && <route.icon className={iconClasses} aria-hidden="true" />}
-      {route.label}
+    <RouterNavLink className={linkClasses} to={route.PATH}>
+      {route.ICON && <route.ICON className={iconClasses} aria-hidden="true" />}
+      {route.LABEL}
     </RouterNavLink>
   )
 }

@@ -1,10 +1,6 @@
-import { ContentLayout, MainLayout } from '@/components'
+import { ContentLayout } from '@/components'
 import { HOME } from '@/config'
 
 export const Home: React.FC = () => {
-  return (
-    <MainLayout>
-      <ContentLayout title={HOME.TITLE}>HOME CONTENT</ContentLayout>
-    </MainLayout>
-  )
+  return <ContentLayout title={HOME.TITLE}>HOME CONTENT</ContentLayout>
 }

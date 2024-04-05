@@ -2,7 +2,7 @@ import Axios, { InternalAxiosRequestConfig } from 'axios'
 
 import { APP_DEFAULT, ERRORS } from '@/config'
 import { store } from '@/store'
-import { addNotification } from '@/store/notificationsSlice'
+import { addNotification } from '@/store'
 import { NotificationEnum } from '@/types'
 import { getErrorMessage } from '@/utils/errors'
 
@@ -19,7 +19,7 @@ axiosInstance.interceptors.request.use(
     store.dispatch(
       addNotification(
         NotificationEnum.Error,
-        ERRORS.GENERAL_NETWORK_ERROR,
+        ERRORS.GENERAL_NETWORK,
         getErrorMessage(error)
       )
     )
@@ -31,8 +31,13 @@ axiosInstance.interceptors.response.use(
     return response.data
   },
   (error) => {
-    console.log(error)
-
+    store.dispatch(
+      addNotification(
+        NotificationEnum.Error,
+        ERRORS.GENERAL_NETWORK,
+        getErrorMessage(error)
+      )
+    )
     return Promise.reject(error)
   }
 )

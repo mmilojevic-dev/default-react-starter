@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { MobileSidebar } from './MobileSidebar'
-import { Sidebar } from './Sidebar'
-import { Topbar } from './Topbar'
+import { MobileSidebar, Sidebar, Topbar } from '@/components'
 
 export const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
