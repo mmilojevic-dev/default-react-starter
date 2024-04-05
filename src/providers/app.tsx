@@ -1,22 +1,20 @@
-import { ErrorBoundary } from 'react-error-boundary'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-import { ErrorFallback } from '@/components'
-import { Notifications } from '@/components'
-import { store } from '@/store'
+import { MainLayout, Spinner } from '@/components'
 
-type AppProviderProps = {
-  children: React.ReactNode
-}
-
-export const AppProvider = ({ children }: AppProviderProps) => {
+export const AppProvider = () => {
   return (
-    <Provider store={store}>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Notifications />
-        <BrowserRouter>{children}</BrowserRouter>
-      </ErrorBoundary>
-    </Provider>
+    <MainLayout>
+      <React.Suspense
+        fallback={
+          <div className="flex size-full items-center justify-center">
+            <Spinner size="xl" />
+          </div>
+        }
+      >
+        <Outlet />
+      </React.Suspense>
+    </MainLayout>
   )
 }

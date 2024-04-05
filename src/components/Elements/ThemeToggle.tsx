@@ -1,27 +1,20 @@
 import { Moon, Sun } from 'lucide-react'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import { Button } from '@/components/Elements/Button'
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/Elements/DropdownMenu'
+} from '@/components'
 import { THEME } from '@/config'
-import { AppDispatch, RootState } from '@/store'
-import { setTheme } from '@/store/themeSlice'
+import { AppDispatch, setTheme } from '@/store'
 import { ThemeEnum } from '@/types'
-import { applyTheme } from '@/utils/theme'
 
 export const ThemeToggle: React.FC = () => {
-  const theme = useSelector((state: RootState) => state.theme.activeTheme)
   const dispatch = useDispatch<AppDispatch>()
-
-  React.useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
 
   return (
     <DropdownMenu>

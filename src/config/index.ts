@@ -1,4 +1,4 @@
-import { HomeIcon, InfoIcon } from 'lucide-react'
+import { HomeIcon, InfoIcon, Target } from 'lucide-react'
 
 import { ThemeEnum } from '@/types'
 
@@ -11,42 +11,51 @@ export const APP_DEFAULT = {
   TITLE: 'Default React Template',
   VERSION: '1.0.0',
   CLIENT_URL: process.env.REACT_APP_CLIENT_URL as string,
-  API_URL: process.env.REACT_APP_API_URL as string
+  API_URL: process.env.REACT_APP_API_URL as string,
+  GITHUB_REPO_URL: 'https://github.com/mmilojevic-dev/default-react-starter',
+  LOGO: Target
 }
 
 export const ROUTES = {
-  HOME: {
-    label: 'Home',
-    path: '/',
-    navItemHidden: false,
-    icon: HomeIcon
+  PUBLIC: {
+    LANDING: {
+      LABEL: '',
+      PATH: '',
+      NAV_ITEM: true,
+      ICON: null
+    }
   },
-  ABOUT: {
-    label: 'About',
-    path: '/about',
-    navItemHidden: false,
-    icon: InfoIcon
-  },
-  NOT_FOUND: {
-    label: '',
-    path: '/404',
-    navItemHidden: true,
-    icon: null
-  },
-  INTERNAL_SERVER: {
-    label: '',
-    path: '/500',
-    navItemHidden: true,
-    icon: null
+  PROTECTED: {
+    APP: {
+      LABEL: '',
+      PATH: 'app',
+      NAV_ITEM: true,
+      ICON: null
+    },
+    HOME: {
+      LABEL: 'Home',
+      PATH: '',
+      NAV_ITEM: false,
+      ICON: HomeIcon
+    },
+    ABOUT: {
+      LABEL: 'About',
+      PATH: 'about',
+      NAV_ITEM: false,
+      ICON: InfoIcon
+    }
   }
 }
 
 export const THEME = {
   TOGGLER_LABEL: 'Toggle theme',
   INITIAL: ThemeEnum.System,
-  LOCAL_STORAGE_KEY: 'theme',
-  OUT_OF_PROVIDER_USAGE_ERROR:
-    'useThemeContext must be used within a ThemeProvider'
+  LOCAL_STORAGE_KEY: 'theme'
+}
+
+export const LANDING = {
+  ACTION_BUTTON_LABEL: `Get Started`,
+  PROJECT_REPO_LABEL: `Github Repo`
 }
 
 export const HOME = {
@@ -64,7 +73,7 @@ export const ABOUT = {
 }
 
 export const ERRORS = {
-  NOT_FOUND_MESSAGE: '404 - Not Found.',
-  INTERNAL_SERVER_MESSAGE: '500 - Internal Server Error.',
-  GENERAL_NETWORK_ERROR: 'Network Error'
+  GENERAL_NETWORK: 'Network Error',
+  FALLBACK_TEXT: 'Ooops, something went wrong:',
+  FALLBACK_BUTTON_LABEL: 'Refresh'
 }

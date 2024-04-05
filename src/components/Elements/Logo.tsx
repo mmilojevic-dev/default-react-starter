@@ -1,11 +1,22 @@
 import { Target } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-export const Logo = () => {
+import { APP_DEFAULT } from '@/config'
+import { cn } from '@/utils'
+
+interface LogoProps {
+  withTitle?: boolean
+  size?: number
+}
+
+export const Logo = ({ withTitle = false, size = 8 }: LogoProps) => {
+  const sizeClass = `size-${size}`
   return (
-    <Link className="flex items-center gap-2" to="/">
-      <Target className="size-8 rounded-full" />
-      <h2 className="text-sm font-semibold">Default React Template</h2>
+    <Link className="flex items-center gap-2" to=".">
+      <Target className={cn(sizeClass, 'rounded-full', 'text-primary')} />
+      {withTitle && (
+        <h2 className="text-sm font-semibold">{APP_DEFAULT.TITLE}</h2>
+      )}
     </Link>
   )
 }

@@ -23,10 +23,3 @@ export type NotificationType =
   | NotificationEnum.Success
   | NotificationEnum.Warning
   | NotificationEnum.Error
-
-export type Route = {
-  label: string
-  path: string
-  navItemHidden: boolean
-  icon: ((props: React.SVGProps<SVGSVGElement>) => React.ReactNode) | null
-}
