@@ -28,15 +28,15 @@
 
   .dark {
     --background: 206 30% 12%;
-    --foreground: 206 60% 95%; /* Svetao tekst za čitljivost */
-    --card: 206 45% 18%; /* Diskretno izdvajanje kartica */
-    --card-foreground: 206 70% 95%; /* Jasniji tekst na karticama */
-    --popover: 206 40% 15%; /* Tamniji, za fokus na sadržaj */
-    --popover-foreground: 206 80% 95%; /* Svetao tekst unutar popover-a */
-    --primary: 206 100% 45%; /* Jača primarna boja za tamni mod */
-    --primary-foreground: 0 0% 100%; /* Očuvanje visokog kontrasta */
-    --secondary: 206 60% 30%; /* Tamniji sekundarni ton */
-    --secondary-foreground: 0 0% 100%; /* Beli tekst za sekundarne elemente */
+    --foreground: 206 60% 95%;
+    --card: 206 45% 18%;
+    --card-foreground: 206 70% 95%;
+    --popover: 206 40% 15%;
+    --popover-foreground: 206 80% 95%;
+    --primary: 206 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 206 60% 30%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 168 25% 35%;
     --muted-foreground: 206 70% 90%;
     --accent: 168 50% 40%;
@@ -65,5 +65,28 @@
   h5,
   h6 {
     @apply font-serif;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground));
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary-foreground));
   }
 }

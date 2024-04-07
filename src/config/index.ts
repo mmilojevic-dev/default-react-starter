@@ -1,4 +1,4 @@
-import { HomeIcon, InfoIcon, Target } from 'lucide-react'
+import { InfoIcon, List, Target } from 'lucide-react'
 
 import { ThemeEnum } from '@/types'
 
@@ -32,11 +32,11 @@ export const ROUTES = {
       NAV_ITEM: true,
       ICON: null
     },
-    HOME: {
-      LABEL: 'Home',
+    POSTS: {
+      LABEL: 'Posts',
       PATH: '',
       NAV_ITEM: false,
-      ICON: HomeIcon
+      ICON: List
     },
     ABOUT: {
       LABEL: 'About',

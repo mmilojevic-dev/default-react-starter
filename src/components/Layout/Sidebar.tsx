@@ -8,7 +8,7 @@ type SidebarProps = {
 export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <div className={cn('h-full bg-card', className)}>
-      <div className="flex w-64 flex-col">
+      <div className="flex w-52 flex-col">
         <div className="flex h-0 flex-1 flex-col">
           <div className="flex h-16 shrink-0 items-center bg-background/50 px-4">
             <Logo withTitle />

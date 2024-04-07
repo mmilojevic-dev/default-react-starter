@@ -15,7 +15,7 @@ export const Logo = ({ withTitle = false, size = 8 }: LogoProps) => {
     <Link className="flex items-center gap-2" to=".">
       <Target className={cn(sizeClass, 'rounded-full', 'text-primary')} />
       {withTitle && (
-        <h2 className="text-sm font-semibold">{APP_DEFAULT.TITLE}</h2>
+        <span className="text-xs font-semibold">{APP_DEFAULT.TITLE}</span>
       )}
     </Link>
   )
