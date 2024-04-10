@@ -1,4 +1,6 @@
 export * from './Button'
+export * from './ConfirmationDialog'
+export * from './Dialog'
 export * from './DropdownMenu'
 export * from './Logo'
 export * from './NavLink'
