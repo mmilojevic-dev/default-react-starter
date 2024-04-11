@@ -1,6 +1,7 @@
 import { TrashIcon } from 'lucide-react'
 
 import { Button, ConfirmationDialog, Spinner } from '@/components'
+import { DELETE_POST } from '@/config'
 
 import { useDeletePost } from '../api/deletePost'
 
@@ -14,12 +15,12 @@ export const DeletePost = ({ id }: DeletePostProps) => {
   return (
     <ConfirmationDialog
       icon="danger"
-      title="Delete Post"
-      body="Are you sure you want to delete this post?"
+      title={DELETE_POST.CONFIRMATION_MODAL.TITLE}
+      body={DELETE_POST.CONFIRMATION_MODAL.BODY}
       triggerButton={
         <Button variant="destructive">
-          <TrashIcon className="size-4" />
-          Delete Post
+          <TrashIcon className="mr-1 size-4" />
+          {DELETE_POST.TRIGGER_BUTTON_LABEL}
         </Button>
       }
       confirmButton={
@@ -33,7 +34,7 @@ export const DeletePost = ({ id }: DeletePostProps) => {
           {deletePostMutation.isLoading && (
             <Spinner size="sm" className="text-foreground" />
           )}
-          Delete Post
+          {DELETE_POST.CONFIRMATION_MODAL.CONFIRM_BUTTON_LABEL}
         </Button>
       }
     />

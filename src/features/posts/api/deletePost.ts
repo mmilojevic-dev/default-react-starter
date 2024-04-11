@@ -1,6 +1,7 @@
 import { useMutation } from 'react-query'
 import { useDispatch } from 'react-redux'
 
+import { DELETE_POST, POSTS } from '@/config'
 import { axiosInstance } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
 import { addNotification, AppDispatch } from '@/store'
@@ -10,7 +11,7 @@ import { getErrorMessage } from '@/utils'
 import { PostType } from '../types'
 
 export const deletePost = ({ postId }: { postId: number }) => {
-  return axiosInstance.delete(`/posts/${postId}`)
+  return axiosInstance.delete(`${POSTS.API_PATH}/${postId}`)
 }
 
 type UseDeletePostOptions = {
@@ -22,12 +23,14 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
 
   return useMutation({
     onMutate: async (deletedPost) => {
-      await queryClient.cancelQueries('posts')
+      await queryClient.cancelQueries(POSTS.QUERY_KEY)
 
-      const previousPosts = queryClient.getQueryData<PostType[]>('posts')
+      const previousPosts = queryClient.getQueryData<PostType[]>(
+        POSTS.QUERY_KEY
+      )
 
       queryClient.setQueryData(
-        'posts',
+        POSTS.QUERY_KEY,
         previousPosts?.filter((post) => post.id !== deletedPost.postId)
       )
 
@@ -37,21 +40,21 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
       dispatch(
         addNotification(
           NotificationEnum.Error,
-          'Post Deletion Error',
+          DELETE_POST.STATUS.ERROR.TITLE,
           getErrorMessage(error)
         )
       )
       if (context?.previousPosts) {
-        queryClient.setQueryData('posts', context.previousPosts)
+        queryClient.setQueryData(POSTS.QUERY_KEY, context.previousPosts)
       }
     },
     onSuccess: (_, { postId }) => {
-      queryClient.invalidateQueries('posts')
+      queryClient.invalidateQueries(POSTS.QUERY_KEY)
       dispatch(
         addNotification(
           NotificationEnum.Success,
-          'Post Deleted',
-          `Post with id ${postId} has been deleted.`
+          DELETE_POST.STATUS.SUCCESS.TITLE,
+          DELETE_POST.STATUS.SUCCESS.MESSAGE(postId)
         )
       )
     },
