@@ -1,7 +1,7 @@
 import { ContentLayout } from '@/components'
 import { ABOUT } from '@/config'
 
-export const About: React.FC = () => {
+export const About = () => {
   const { TITLE, CONTENT } = ABOUT
   return (
     <ContentLayout title={TITLE}>
