@@ -1,6 +1,8 @@
 import { LoadingFallback, Table } from '@/components'
 
 import { usePosts } from '../api/getPosts'
+import { PostType } from '../types'
+import { DeletePost } from './DeletePost'
 
 export const PostsList = () => {
   const postsQuery = usePosts()
@@ -12,7 +14,7 @@ export const PostsList = () => {
   if (!postsQuery.data) return null
 
   return (
-    <Table
+    <Table<PostType>
       data={postsQuery.data}
       columns={[
         {
@@ -20,19 +22,17 @@ export const PostsList = () => {
           field: 'userId'
         },
         {
-          title: 'ID',
-          field: 'id'
-        },
-        {
           title: 'Title',
           field: 'title'
         },
         {
           title: 'Body',
-          field: 'body',
-          Cell: ({ entry }) => (
-            <span className="text-muted-foreground">{entry.body}</span>
-          )
+          field: 'body'
+        },
+        {
+          title: '',
+          field: 'id',
+          Cell: ({ entry: { id } }) => <DeletePost id={id} />
         }
       ]}
     />

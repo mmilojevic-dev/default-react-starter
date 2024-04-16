@@ -13,10 +13,10 @@ export const Navigation: React.FC = () => {
   )
 
   return (
-    <>
+    <nav className="flex-1 space-y-1 px-2 py-4">
       {navigationItems.map((route) => (
         <NavLink key={route.PATH} route={route} />
       ))}
-    </>
+    </nav>
   )
 }

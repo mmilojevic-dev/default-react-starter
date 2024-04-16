@@ -37,8 +37,8 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 206 60% 30%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 168 25% 35%;
-    --muted-foreground: 206 70% 90%;
+    --muted: 168 25% 30%;
+    --muted-foreground: 206 70% 75%;
     --accent: 168 50% 40%;
     --accent-foreground: 206 80% 95%;
     --destructive: 0 100% 55%;
@@ -67,25 +67,21 @@
     @apply font-serif;
   }
 
-  /* width */
   ::-webkit-scrollbar {
     width: 7px;
     height: 7px;
   }
 
-  /* Track */
   ::-webkit-scrollbar-track {
     background: hsl(var(--background));
     border-radius: 5px;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--foreground));
     border-radius: 5px;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--secondary-foreground));
   }
