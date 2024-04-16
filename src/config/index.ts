@@ -64,6 +64,25 @@ export const POSTS = {
   QUERY_KEY: 'posts'
 }
 
+export const CREATE_POST = {
+  TRIGGER_BUTTON_LABEL: 'Create Post',
+  FORM_DRAWER: {
+    TITLE: 'Create Post',
+    POST_TITLE_PLACEHOLDER: 'Title',
+    POST_BODY_PLACEHOLDER: 'Body',
+    CONFIRM_BUTTON_LABEL: 'Submit'
+  },
+  STATUS: {
+    ERROR: {
+      TITLE: 'Post Creation Error'
+    },
+    SUCCESS: {
+      TITLE: 'Post Created',
+      MESSAGE: (postId: number) => `Post with id ${postId} has been created.`
+    }
+  }
+}
+
 export const DELETE_POST = {
   TRIGGER_BUTTON_LABEL: 'Delete Post',
   CONFIRMATION_MODAL: {

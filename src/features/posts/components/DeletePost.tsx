@@ -32,11 +32,12 @@ export const DeletePost = ({ id }: DeletePostProps) => {
           }
         >
           {deletePostMutation.isLoading && (
-            <Spinner size="sm" className="text-foreground" />
+            <Spinner size="sm" className="mr-2 text-foreground" />
           )}
           {DELETE_POST.CONFIRMATION_MODAL.CONFIRM_BUTTON_LABEL}
         </Button>
       }
+      isDone={deletePostMutation.isSuccess}
     />
   )
 }

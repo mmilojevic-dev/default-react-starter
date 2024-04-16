@@ -37,6 +37,9 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
       return { previousPosts }
     },
     onError: (error, __, context: any) => {
+      if (context?.previousPosts) {
+        queryClient.setQueryData(POSTS.QUERY_KEY, context.previousPosts)
+      }
       dispatch(
         addNotification(
           NotificationEnum.Error,
@@ -44,9 +47,6 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
           getErrorMessage(error)
         )
       )
-      if (context?.previousPosts) {
-        queryClient.setQueryData(POSTS.QUERY_KEY, context.previousPosts)
-      }
     },
     onSuccess: (_, { postId }) => {
       queryClient.invalidateQueries(POSTS.QUERY_KEY)

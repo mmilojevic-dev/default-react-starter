@@ -13,8 +13,11 @@ export type FieldWrapperPassThroughProps = Omit<
   'className' | 'children'
 >
 
-export const FieldWrapper = (props: FieldWrapperProps) => {
-  const { className, error, children } = props
+export const FieldWrapper = ({
+  className,
+  error,
+  children
+}: FieldWrapperProps) => {
   return (
     <div className={className}>
       <div className="mb-1">{children}</div>
