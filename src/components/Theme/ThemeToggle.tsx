@@ -1,6 +1,5 @@
 import { Moon, Sun } from 'lucide-react'
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
 import {
   Button,
@@ -10,11 +9,11 @@ import {
   DropdownMenuTrigger
 } from '@/components'
 import { themeConfig } from '@/config'
-import { AppDispatch, setTheme } from '@/store'
+import { useThemeStore } from '@/store/themeStore'
 import { ThemeEnum } from '@/types'
 
 export const ThemeToggle: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>()
+  const { setTheme } = useThemeStore()
 
   return (
     <DropdownMenu>
@@ -32,19 +31,19 @@ export const ThemeToggle: React.FC = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => dispatch(setTheme(ThemeEnum.Light))}
+          onClick={() => setTheme(ThemeEnum.Light)}
         >
           {ThemeEnum.Light}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => dispatch(setTheme(ThemeEnum.Dark))}
+          onClick={() => setTheme(ThemeEnum.Dark)}
         >
           {ThemeEnum.Dark}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="capitalize"
-          onClick={() => dispatch(setTheme(ThemeEnum.System))}
+          onClick={() => setTheme(ThemeEnum.System)}
         >
           {ThemeEnum.System}
         </DropdownMenuItem>

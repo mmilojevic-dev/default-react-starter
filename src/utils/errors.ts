@@ -1,5 +1,5 @@
 import { errorsConfig } from '@/config'
-import { addNotification, store } from '@/store'
+import { useNotificationStore } from '@/store'
 import { NotificationEnum } from '@/types'
 
 export const getErrorMessage = (error: unknown) => {
@@ -8,11 +8,11 @@ export const getErrorMessage = (error: unknown) => {
 }
 
 export const handleError = (error: any) => {
-  store.dispatch(
-    addNotification(
-      NotificationEnum.Error,
-      errorsConfig.defaultTitle,
-      getErrorMessage(error)
-    )
+  const errorMessage = getErrorMessage(error)
+  const addNotification = useNotificationStore.getState().addNotification
+  addNotification(
+    NotificationEnum.Error,
+    errorsConfig.defaultTitle,
+    errorMessage
   )
 }

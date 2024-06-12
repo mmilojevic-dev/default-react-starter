@@ -1,3 +1,2 @@
-export * from './notificationsSlice'
-export * from './store'
-export * from './themeSlice'
+export * from './notificationsStore'
+export * from './themeStore'

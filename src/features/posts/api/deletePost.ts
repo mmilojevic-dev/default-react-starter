@@ -1,10 +1,9 @@
 import { QueryKey, useMutation } from '@tanstack/react-query'
-import { useDispatch } from 'react-redux'
 
 import { deletePostConfig, postsConfig } from '@/config'
 import { axiosClient } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
-import { addNotification, AppDispatch } from '@/store'
+import { useNotificationStore } from '@/store'
 import { NotificationEnum } from '@/types'
 import { getErrorMessage } from '@/utils'
 
@@ -19,7 +18,8 @@ type UseDeletePostOptions = {
 }
 
 export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
-  const dispatch = useDispatch<AppDispatch>()
+  const { addNotification } = useNotificationStore()
+
   const queryKey: QueryKey = [postsConfig.queryKey]
 
   return useMutation({
@@ -39,22 +39,18 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
       if (context?.previousPosts) {
         queryClient.setQueryData(queryKey, context.previousPosts)
       }
-      dispatch(
-        addNotification(
-          NotificationEnum.Error,
-          deletePostConfig.status.error.title,
-          getErrorMessage(error)
-        )
+      addNotification(
+        NotificationEnum.Error,
+        deletePostConfig.status.error.title,
+        getErrorMessage(error)
       )
     },
     onSuccess: (_, { postId }) => {
       queryClient.invalidateQueries({ queryKey })
-      dispatch(
-        addNotification(
-          NotificationEnum.Success,
-          deletePostConfig.status.success.title,
-          deletePostConfig.status.success.message(postId)
-        )
+      addNotification(
+        NotificationEnum.Success,
+        deletePostConfig.status.success.title,
+        deletePostConfig.status.success.message(postId)
       )
     },
     ...config,

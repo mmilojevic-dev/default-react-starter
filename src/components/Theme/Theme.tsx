@@ -1,11 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
-import { selectTheme } from '@/store'
+import { useThemeStore } from '@/store'
 import { ThemeEnum } from '@/types'
 
 export const Theme = ({ children }: React.PropsWithChildren) => {
-  const theme = useSelector(selectTheme)
+  const { currentTheme } = useThemeStore()
 
   React.useEffect(() => {
     const root = window.document.documentElement
@@ -15,8 +14,10 @@ export const Theme = ({ children }: React.PropsWithChildren) => {
       : ThemeEnum.Light
 
     root.classList.remove(ThemeEnum.Light, ThemeEnum.Dark)
-    root.classList.add(theme === ThemeEnum.System ? systemTheme : theme)
-  }, [theme])
+    root.classList.add(
+      currentTheme === ThemeEnum.System ? systemTheme : currentTheme
+    )
+  }, [currentTheme])
 
   return <>{children}</>
 }

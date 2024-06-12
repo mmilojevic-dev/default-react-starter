@@ -1,9 +1,8 @@
 import { QueryKey, useMutation } from '@tanstack/react-query'
-import { useDispatch } from 'react-redux'
 
 import { axiosClient } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
-import { addNotification, AppDispatch } from '@/store'
+import { useNotificationStore } from '@/store'
 import { NotificationEnum } from '@/types'
 import { getErrorMessage } from '@/utils'
 
@@ -25,7 +24,7 @@ type UseCreatePostOptions = {
 }
 
 export const useCreatePost = ({ config }: UseCreatePostOptions = {}) => {
-  const dispatch = useDispatch<AppDispatch>()
+  const { addNotification } = useNotificationStore()
   const queryKey: QueryKey = ['posts']
 
   return useMutation({
@@ -45,22 +44,18 @@ export const useCreatePost = ({ config }: UseCreatePostOptions = {}) => {
       if (context?.previousPosts) {
         queryClient.setQueryData(queryKey, context.previousPosts)
       }
-      dispatch(
-        addNotification(
-          NotificationEnum.Error,
-          'Post Creation Error',
-          getErrorMessage(error)
-        )
+      addNotification(
+        NotificationEnum.Error,
+        'Post Creation Error',
+        getErrorMessage(error)
       )
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey })
-      dispatch(
-        addNotification(
-          NotificationEnum.Success,
-          'Post Created',
-          'You have successfully created post.'
-        )
+      addNotification(
+        NotificationEnum.Success,
+        'Post Created',
+        'You have successfully created post.'
       )
     },
     ...config,

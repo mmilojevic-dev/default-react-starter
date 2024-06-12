@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
-RUN yarn build  # Ensure this script builds your app into /app/dist
+RUN yarn build  # Ensure this script builds your app into /dist
 
 # Production stage
 FROM nginx:stable-alpine as production
