@@ -2,117 +2,118 @@ import { InfoIcon, List, Target } from 'lucide-react'
 
 import { ThemeEnum } from '@/types'
 
-export const APP_DEFAULT = {
-  AUTHOR: 'Miloš Milojević',
-  CURRENCY: '€',
-  DESCRIPTION:
+export const appDefaultConfig = {
+  author: 'Miloš Milojević',
+  currency: '€',
+  description:
     'A template built to easily start with client-rendered React app development with Vite.',
-  LABGUAGE: 'en',
-  TITLE: 'Default React Template',
-  VERSION: '1.0.0',
-  CLIENT_URL: process.env.REACT_APP_CLIENT_URL as string,
-  API_URL: process.env.REACT_APP_API_URL as string,
-  GITHUB_REPO_URL: 'https://github.com/mmilojevic-dev/default-react-starter',
-  LOGO: Target
+  language: 'en',
+  title: 'Default React Template',
+  version: '1.0.0',
+  clientUrl: process.env.REACT_APP_CLIENT_URL as string,
+  apiUrl: process.env.REACT_APP_API_URL as string,
+  githubRepoUrl: 'https://github.com/mmilojevic-dev/default-react-starter',
+  logo: Target
 }
 
-export const ROUTES = {
-  PUBLIC: {
-    LANDING: {
-      LABEL: '',
-      PATH: '',
-      NAV_ITEM: true,
-      ICON: null
+export const routesConfig = {
+  public: {
+    landing: {
+      label: '',
+      path: '',
+      navItem: true,
+      icon: null
     }
   },
-  PROTECTED: {
-    APP: {
-      LABEL: '',
-      PATH: 'app',
-      NAV_ITEM: true,
-      ICON: null
+  protected: {
+    app: {
+      label: '',
+      path: 'app',
+      navItem: true,
+      icon: null
     },
-    POSTS: {
-      LABEL: 'Posts',
-      PATH: '',
-      NAV_ITEM: false,
-      ICON: List
+    posts: {
+      label: 'Posts',
+      path: '',
+      navItem: false,
+      icon: List
     },
-    ABOUT: {
-      LABEL: 'About',
-      PATH: 'about',
-      NAV_ITEM: false,
-      ICON: InfoIcon
+    about: {
+      label: 'About',
+      path: 'about',
+      navItem: false,
+      icon: InfoIcon
     }
   }
 }
 
-export const THEME = {
-  TOGGLER_LABEL: 'Toggle theme',
-  INITIAL: ThemeEnum.System,
-  LOCAL_STORAGE_KEY: 'theme'
+export const themeConfig = {
+  togglerLabel: 'Toggle theme',
+  initial: ThemeEnum.System,
+  localStorageKey: 'theme'
 }
 
-export const LANDING = {
-  ACTION_BUTTON_LABEL: `Get Started`,
-  PROJECT_REPO_LABEL: `Github Repo`
+export const landingConfig = {
+  actionButtonLabel: `Get Started`,
+  projectRepoLabel: `Github Repo`,
+  projectRepoLink: appDefaultConfig.githubRepoUrl
 }
 
-export const POSTS = {
-  TITLE: 'Posts',
-  API_PATH: '/posts',
-  QUERY_KEY: 'posts'
+export const postsConfig = {
+  title: 'Posts',
+  apipath: '/posts',
+  queryKey: 'posts'
 }
 
-export const CREATE_POST = {
-  TRIGGER_BUTTON_LABEL: 'Create Post',
-  FORM_DRAWER: {
-    TITLE: 'Create Post',
-    POST_TITLE_PLACEHOLDER: 'Title',
-    POST_BODY_PLACEHOLDER: 'Body',
-    CONFIRM_BUTTON_LABEL: 'Submit'
+export const createPostConfig = {
+  triggerButtonLabel: 'Create Post',
+  formDrawer: {
+    title: 'Create Post',
+    postTitlePlaceholder: 'Title',
+    postBodyPlaceholder: 'Body',
+    confirmButtonLabel: 'Submit'
   },
-  STATUS: {
-    ERROR: {
-      TITLE: 'Post Creation Error'
+  status: {
+    error: {
+      title: 'Post Creation Error'
     },
-    SUCCESS: {
-      TITLE: 'Post Created',
-      MESSAGE: (postId: number) => `Post with id ${postId} has been created.`
+    success: {
+      title: 'Post Created',
+      message: (postId: number) => `Post with id ${postId} has been created.`
     }
   }
 }
 
-export const DELETE_POST = {
-  TRIGGER_BUTTON_LABEL: 'Delete Post',
-  CONFIRMATION_MODAL: {
-    TITLE: 'Delete Post',
-    BODY: 'Are you sure you want to delete this post?',
-    CONFIRM_BUTTON_LABEL: 'Delete Post'
+export const deletePostConfig = {
+  triggerButtonLabel: 'Delete Post',
+  confirmationModal: {
+    title: 'Delete Post',
+    body: 'Are you sure you want to delete this post?',
+    confirmButtonLabel: 'Delete Post'
   },
-  STATUS: {
-    ERROR: {
-      TITLE: 'Post Deletion Error'
+  status: {
+    error: {
+      title: 'Post Deletion Error'
     },
-    SUCCESS: {
-      TITLE: 'Post Deleted',
-      MESSAGE: (postId: number) => `Post with id ${postId} has been deleted.`
+    success: {
+      title: 'Post Deleted',
+      message: (postId: number) => `Post with id ${postId} has been deleted.`
     }
   }
 }
 
-export const ABOUT = {
-  TITLE: 'About',
-  CONTENT: {
-    AUTHOR: APP_DEFAULT.AUTHOR,
-    VERSION: APP_DEFAULT.VERSION,
-    APP_NAME: APP_DEFAULT.TITLE,
-    APP_DESCRIPTION: APP_DEFAULT.DESCRIPTION
+export const aboutConfig = {
+  title: 'About',
+  content: {
+    author: appDefaultConfig.author,
+    version: appDefaultConfig.version,
+    appName: appDefaultConfig.title,
+    appDescription: appDefaultConfig.description
   }
 }
 
-export const ERRORS = {
-  GENERAL_NETWORK: 'Network Error',
-  FALLBACK_TEXT: 'Ooops, something went wrong:',
-  FALLBACK_BUTTON_LABEL: 'Refresh'
+export const errorsConfig = {
+  defaultTitle: 'Network Error',
+  fallbackText: 'Ooops, something went wrong:',
+  fallbackButtonLabel: 'Refresh'
 }

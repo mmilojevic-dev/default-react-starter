@@ -1,7 +1,7 @@
-import { useMutation } from 'react-query'
+import { QueryKey, useMutation } from '@tanstack/react-query'
 import { useDispatch } from 'react-redux'
 
-import { axiosInstance } from '@/lib/axios'
+import { axiosClient } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
 import { addNotification, AppDispatch } from '@/store'
 import { NotificationEnum } from '@/types'
@@ -17,7 +17,7 @@ export type CreatePostDTO = {
 }
 
 export const createPost = ({ data }: CreatePostDTO): Promise<PostType> => {
-  return axiosInstance.post(`/posts`, data)
+  return axiosClient.post(`/posts`, data)
 }
 
 type UseCreatePostOptions = {
@@ -26,14 +26,15 @@ type UseCreatePostOptions = {
 
 export const useCreatePost = ({ config }: UseCreatePostOptions = {}) => {
   const dispatch = useDispatch<AppDispatch>()
+  const queryKey: QueryKey = ['posts']
 
   return useMutation({
     onMutate: async (newPost) => {
-      await queryClient.cancelQueries('posts')
+      await queryClient.cancelQueries({ queryKey })
 
-      const previousPosts = queryClient.getQueryData<PostType[]>('posts')
+      const previousPosts = queryClient.getQueryData<PostType[]>(queryKey)
 
-      queryClient.setQueryData('posts', [
+      queryClient.setQueryData(queryKey, [
         ...(previousPosts || []),
         newPost.data
       ])
@@ -42,7 +43,7 @@ export const useCreatePost = ({ config }: UseCreatePostOptions = {}) => {
     },
     onError: (error, __, context: any) => {
       if (context?.previousPosts) {
-        queryClient.setQueryData('posts', context.previousPosts)
+        queryClient.setQueryData(queryKey, context.previousPosts)
       }
       dispatch(
         addNotification(
@@ -53,12 +54,12 @@ export const useCreatePost = ({ config }: UseCreatePostOptions = {}) => {
       )
     },
     onSuccess: () => {
-      queryClient.invalidateQueries('posts')
+      queryClient.invalidateQueries({ queryKey })
       dispatch(
         addNotification(
           NotificationEnum.Success,
           'Post Created',
-          'You have successfuly created post.'
+          'You have successfully created post.'
         )
       )
     },

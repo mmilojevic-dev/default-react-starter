@@ -5,15 +5,15 @@
 @layer base {
   :root {
     --background: 206 98% 95%;
-    --foreground: 206 20% 20%; /* Poboljšan kontrast za tekst */
-    --card: 206 80% 98%; /* Malo svetlije za bolje razlikovanje */
-    --card-foreground: 206 30% 15%; /* Tamniji tekst za bolju čitljivost */
-    --popover: 206 90% 100%; /* Svetao, za izdvajanje bez ometanja */
-    --popover-foreground: 206 25% 20%; /* Kontrastan tekst unutar popover-a */
-    --primary: 206 100% 35%; /* Jača, izražajnija primarna boja */
-    --primary-foreground: 0 0% 100%; /* Beli tekst za visok kontrast */
-    --secondary: 206 50% 60%; /* Suptilnija, ali razlikovita */
-    --secondary-foreground: 0 0% 0%; /* Crni tekst za bolju vidljivost */
+    --foreground: 206 20% 20%;
+    --card: 206 80% 98%;
+    --card-foreground: 206 30% 15%;
+    --popover: 206 90% 100%;
+    --popover-foreground: 206 25% 20%;
+    --primary: 206 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 206 50% 60%;
+    --secondary-foreground: 0 0% 0%;
     --muted: 168 20% 90%;
     --muted-foreground: 206 40% 30%;
     --accent: 168 60% 70%;

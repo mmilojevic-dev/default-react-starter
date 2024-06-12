@@ -1,13 +1,13 @@
 import { ContentLayout } from '@/components'
-import { ABOUT } from '@/config'
+import { aboutConfig } from '@/config'
 
 export const About = () => {
-  const { TITLE, CONTENT } = ABOUT
+  const { title, content } = aboutConfig
   return (
-    <ContentLayout title={TITLE}>
+    <ContentLayout title={title}>
       <ul className="flex max-w-2xl flex-col gap-y-5">
-        {Object.keys(CONTENT).map((infoTitle: string) => {
-          const infoText = CONTENT[infoTitle as keyof typeof CONTENT]
+        {Object.keys(content).map((infoTitle: string) => {
+          const infoText = content[infoTitle as keyof typeof content]
           return (
             <li key={infoTitle}>
               <div className="font-bold">{infoTitle}</div>

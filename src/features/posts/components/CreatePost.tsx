@@ -3,7 +3,7 @@ import * as z from 'zod'
 
 import { Button, Spinner } from '@/components'
 import { Form, FormDrawer, InputField, TextAreaField } from '@/components/Form'
-import { CREATE_POST } from '@/config'
+import { createPostConfig } from '@/config'
 
 import { CreatePostDTO, useCreatePost } from '../api/createPost'
 
@@ -21,16 +21,16 @@ export const CreatePost = () => {
       triggerButton={
         <Button size="sm">
           <PlusIcon className="mr-2 size-4" />
-          {CREATE_POST.TRIGGER_BUTTON_LABEL}
+          {createPostConfig.triggerButtonLabel}
         </Button>
       }
-      title={CREATE_POST.FORM_DRAWER.TITLE}
+      title={createPostConfig.formDrawer.title}
       submitButton={
         <Button form="create-post" type="submit" size="sm">
-          {createPostMutation.isLoading && (
+          {createPostMutation.isPending && (
             <Spinner size="sm" className="mr-2 text-foreground" />
           )}
-          {CREATE_POST.FORM_DRAWER.CONFIRM_BUTTON_LABEL}
+          {createPostConfig.formDrawer.confirmButtonLabel}
         </Button>
       }
     >
@@ -44,13 +44,13 @@ export const CreatePost = () => {
         {({ register, formState }) => (
           <>
             <InputField
-              placeholder={CREATE_POST.FORM_DRAWER.POST_TITLE_PLACEHOLDER}
+              placeholder={createPostConfig.formDrawer.postTitlePlaceholder}
               error={formState.errors['title']}
               registration={register('title')}
             />
 
             <TextAreaField
-              placeholder={CREATE_POST.FORM_DRAWER.POST_BODY_PLACEHOLDER}
+              placeholder={createPostConfig.formDrawer.postBodyPlaceholder}
               error={formState.errors['body']}
               registration={register('body')}
             />

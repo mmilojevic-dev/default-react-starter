@@ -1,13 +1,13 @@
-import React, { PropsWithChildren, useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { RootState } from '@/store'
+import { selectTheme } from '@/store'
 import { ThemeEnum } from '@/types'
 
-export const Theme: React.FC<PropsWithChildren> = ({ children }) => {
-  const theme = useSelector((state: RootState) => state.theme.activeTheme)
+export const Theme = ({ children }: React.PropsWithChildren) => {
+  const theme = useSelector(selectTheme)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const root = window.document.documentElement
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
       .matches

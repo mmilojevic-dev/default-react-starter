@@ -1,43 +1,26 @@
-import Axios, { InternalAxiosRequestConfig } from 'axios'
+import axios, { InternalAxiosRequestConfig } from 'axios'
+import { AxiosResponse } from 'axios'
 
-import { APP_DEFAULT, ERRORS } from '@/config'
-import { store } from '@/store'
-import { addNotification } from '@/store'
-import { NotificationEnum } from '@/types'
-import { getErrorMessage } from '@/utils/errors'
+import { appDefaultConfig } from '@/config'
+import { handleError } from '@/utils'
 
-export const axiosInstance = Axios.create({
-  baseURL: APP_DEFAULT.API_URL
+export const axiosClient = axios.create({
+  baseURL: appDefaultConfig.apiUrl,
+  headers: {
+    Accept: 'application/json'
+  }
 })
 
-axiosInstance.interceptors.request.use(
-  (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
-    config.headers.Accept = 'application/json'
-    return config
-  },
-  (error) => {
-    store.dispatch(
-      addNotification(
-        NotificationEnum.Error,
-        ERRORS.GENERAL_NETWORK,
-        getErrorMessage(error)
-      )
-    )
-    return Promise.reject(error)
-  }
-)
-axiosInstance.interceptors.response.use(
-  (response) => {
-    return response.data
-  },
-  (error) => {
-    store.dispatch(
-      addNotification(
-        NotificationEnum.Error,
-        ERRORS.GENERAL_NETWORK,
-        getErrorMessage(error)
-      )
-    )
-    return Promise.reject(error)
-  }
-)
+const requestInterceptor = (
+  config: InternalAxiosRequestConfig
+): InternalAxiosRequestConfig => {
+  return config
+}
+
+const responseSuccessHandler = (response: AxiosResponse): any => {
+  return response.data
+}
+
+axiosClient.interceptors.request.use(requestInterceptor, handleError)
+
+axiosClient.interceptors.response.use(responseSuccessHandler, handleError)
