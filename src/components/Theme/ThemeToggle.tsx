@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components'
-import { THEME } from '@/config'
+import { themeConfig } from '@/config'
 import { AppDispatch, setTheme } from '@/store'
 import { ThemeEnum } from '@/types'
 
@@ -26,7 +26,7 @@ export const ThemeToggle: React.FC = () => {
             className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0
               dark:scale-100"
           />
-          <span className="sr-only">{THEME.TOGGLER_LABEL}</span>
+          <span className="sr-only">{themeConfig.togglerLabel}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

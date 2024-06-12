@@ -1,16 +1,8 @@
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit'
 
-import { NotificationType } from '@/types'
-
-interface Notification {
-  id: string
-  type: NotificationType
-  title: string
-  message?: string
-}
-
+import { NotificationEnum, NotificationType } from '@/types'
 interface NotificationState {
-  currentNotifications: Notification[]
+  currentNotifications: NotificationType[]
 }
 
 const initialState: NotificationState = {
@@ -22,10 +14,10 @@ const notificationSlice = createSlice({
   initialState,
   reducers: {
     addNotification: {
-      reducer: (state, action: PayloadAction<Notification>) => {
+      reducer: (state, action: PayloadAction<NotificationType>) => {
         state.currentNotifications.push(action.payload)
       },
-      prepare: (type: NotificationType, title: string, message?: string) => ({
+      prepare: (type: NotificationEnum, title: string, message?: string) => ({
         payload: {
           id: nanoid(),
           type,

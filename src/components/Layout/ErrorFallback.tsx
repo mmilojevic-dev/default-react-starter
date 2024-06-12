@@ -1,5 +1,5 @@
 import { Button } from '@/components'
-import { ERRORS } from '@/config'
+import { errorsConfig } from '@/config'
 
 type ErrorFallbackProps = {
   error?: Error
@@ -8,13 +8,15 @@ type ErrorFallbackProps = {
 export const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error }) => {
   return (
     <div
-      className="flex h-screen w-screen flex-col items-center justify-center"
+      className="flex h-screen w-screen flex-col items-center justify-center gap-6"
       role="alert"
     >
-      <h1 className="font-bold text-foreground">{ERRORS.FALLBACK_TEXT}</h1>
-      <pre className="w-full max-w-96 text-foreground">{error?.message}</pre>
+      <h1 className="font-bold text-foreground">{errorsConfig.fallbackText}</h1>
+      <p className="w-full max-w-xl text-center font-mono text-foreground">
+        {error?.message}
+      </p>
       <Button onClick={() => window.location.assign(window.location.origin)}>
-        {ERRORS.FALLBACK_BUTTON_LABEL}
+        {errorsConfig.fallbackButtonLabel}
       </Button>
     </div>
   )

@@ -1,20 +1,37 @@
+import { QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { ErrorBoundary } from 'react-error-boundary'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-import { MainLayout, Spinner } from '@/components'
+import {
+  ErrorFallback,
+  LoadingFallback,
+  Notifications,
+  Theme
+} from '@/components'
+import { queryClient } from '@/lib'
+import { store } from '@/store'
 
-export const AppProvider = () => {
+type AppProviderProps = {
+  children: React.ReactNode
+}
+
+export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-    <MainLayout>
-      <React.Suspense
-        fallback={
-          <div className="flex size-full items-center justify-center">
-            <Spinner size="xl" />
-          </div>
-        }
-      >
-        <Outlet />
-      </React.Suspense>
-    </MainLayout>
+    <Provider store={store}>
+      <Theme>
+        <React.Suspense fallback={<LoadingFallback fullscreen />}>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <QueryClientProvider client={queryClient}>
+              <Notifications />
+              <BrowserRouter>{children}</BrowserRouter>
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </ErrorBoundary>
+        </React.Suspense>
+      </Theme>
+    </Provider>
   )
 }

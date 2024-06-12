@@ -1,8 +1,8 @@
-import { useMutation } from 'react-query'
+import { QueryKey, useMutation } from '@tanstack/react-query'
 import { useDispatch } from 'react-redux'
 
-import { DELETE_POST, POSTS } from '@/config'
-import { axiosInstance } from '@/lib/axios'
+import { deletePostConfig, postsConfig } from '@/config'
+import { axiosClient } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
 import { addNotification, AppDispatch } from '@/store'
 import { NotificationEnum } from '@/types'
@@ -11,7 +11,7 @@ import { getErrorMessage } from '@/utils'
 import { PostType } from '../types'
 
 export const deletePost = ({ postId }: { postId: number }) => {
-  return axiosInstance.delete(`${POSTS.API_PATH}/${postId}`)
+  return axiosClient.delete(`${postsConfig.apipath}/${postId}`)
 }
 
 type UseDeletePostOptions = {
@@ -20,17 +20,16 @@ type UseDeletePostOptions = {
 
 export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
   const dispatch = useDispatch<AppDispatch>()
+  const queryKey: QueryKey = [postsConfig.queryKey]
 
   return useMutation({
     onMutate: async (deletedPost) => {
-      await queryClient.cancelQueries(POSTS.QUERY_KEY)
+      await queryClient.cancelQueries({ queryKey })
 
-      const previousPosts = queryClient.getQueryData<PostType[]>(
-        POSTS.QUERY_KEY
-      )
+      const previousPosts = queryClient.getQueryData<PostType[]>(queryKey)
 
       queryClient.setQueryData(
-        POSTS.QUERY_KEY,
+        queryKey,
         previousPosts?.filter((post) => post.id !== deletedPost.postId)
       )
 
@@ -38,23 +37,23 @@ export const useDeletePost = ({ config }: UseDeletePostOptions = {}) => {
     },
     onError: (error, __, context: any) => {
       if (context?.previousPosts) {
-        queryClient.setQueryData(POSTS.QUERY_KEY, context.previousPosts)
+        queryClient.setQueryData(queryKey, context.previousPosts)
       }
       dispatch(
         addNotification(
           NotificationEnum.Error,
-          DELETE_POST.STATUS.ERROR.TITLE,
+          deletePostConfig.status.error.title,
           getErrorMessage(error)
         )
       )
     },
     onSuccess: (_, { postId }) => {
-      queryClient.invalidateQueries(POSTS.QUERY_KEY)
+      queryClient.invalidateQueries({ queryKey })
       dispatch(
         addNotification(
           NotificationEnum.Success,
-          DELETE_POST.STATUS.SUCCESS.TITLE,
-          DELETE_POST.STATUS.SUCCESS.MESSAGE(postId)
+          deletePostConfig.status.success.title,
+          deletePostConfig.status.success.message(postId)
         )
       )
     },

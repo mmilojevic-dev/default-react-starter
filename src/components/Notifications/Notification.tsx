@@ -2,6 +2,7 @@ import { ExclamationTriangleIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { CheckCircleIcon, ShieldCloseIcon, XIcon } from 'lucide-react'
 
 import { Button } from '@/components'
+import { NotificationType } from '@/types'
 
 const icons = {
   info: <InfoCircledIcon className="size-6 text-primary" aria-hidden="true" />,
@@ -20,12 +21,7 @@ const icons = {
 }
 
 export type NotificationProps = {
-  notification: {
-    id: string
-    type: keyof typeof icons
-    title: string
-    message?: string
-  }
+  notification: NotificationType
   onDismiss: (id: string) => void
 }
 

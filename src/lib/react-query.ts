@@ -1,17 +1,18 @@
-import { AxiosError } from 'axios'
 import {
   DefaultOptions,
   QueryClient,
   UseMutationOptions,
   UseQueryOptions
-} from 'react-query'
+} from '@tanstack/react-query'
+import { AxiosError } from 'axios'
 import { PromiseValue } from 'type-fest'
 
 const queryConfig: DefaultOptions = {
   queries: {
-    useErrorBoundary: true,
-    refetchOnWindowFocus: false,
-    retry: false
+    retry: false,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: 'always',
+    gcTime: 5 * 60 * 1000 // 5 minutes
   }
 }
 

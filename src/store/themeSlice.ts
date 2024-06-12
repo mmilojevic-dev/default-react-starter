@@ -1,31 +1,33 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { THEME } from '@/config'
-import { ThemeEnum, ThemeType } from '@/types'
+import { themeConfig } from '@/config'
+import { ThemeEnum } from '@/types'
 import { getFromLocalStorage, setToLocalStorage } from '@/utils/storage'
 
-const THEME_KEY = THEME.LOCAL_STORAGE_KEY
+import { RootState } from './store'
+
+const THEME_KEY = themeConfig.localStorageKey
 
 interface ThemeState {
-  activeTheme: ThemeType
+  currentTheme: ThemeEnum
 }
 
 const initialState: ThemeState = {
-  activeTheme: getFromLocalStorage<ThemeType>(THEME_KEY, ThemeEnum.System)
+  currentTheme: getFromLocalStorage<ThemeEnum>(THEME_KEY, ThemeEnum.System)
 }
 
 export const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
-    setTheme: (state, action: PayloadAction<ThemeType>) => {
+    setTheme: (state, action: PayloadAction<ThemeEnum>) => {
       const newTheme = action.payload
       setToLocalStorage(THEME_KEY, newTheme)
-      state.activeTheme = newTheme
+      state.currentTheme = newTheme
     }
   }
 })
 
 export const { setTheme } = themeSlice.actions
-
+export const selectTheme = (state: RootState) => state.theme.currentTheme
 export default themeSlice.reducer

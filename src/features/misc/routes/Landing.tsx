@@ -3,7 +3,7 @@ import { HomeIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Button, Logo } from '@/components'
-import { APP_DEFAULT, LANDING, ROUTES } from '@/config'
+import { appDefaultConfig, landingConfig, routesConfig } from '@/config'
 
 export const Landing = () => {
   return (
@@ -14,27 +14,27 @@ export const Landing = () => {
       >
         <Logo size={10} />
         <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          <span className="block">{APP_DEFAULT.TITLE}</span>
+          <span className="block">{appDefaultConfig.title}</span>
         </h1>
-        <p>{APP_DEFAULT.DESCRIPTION}</p>
+        <p>{appDefaultConfig.description}</p>
         <div className="mt-8 flex justify-center">
           <div className="inline-flex rounded-md">
             <Button>
               <HomeIcon className="mr-2 size-4" />
-              <Link to={ROUTES.PROTECTED.APP.PATH}>
-                {LANDING.ACTION_BUTTON_LABEL}
+              <Link to={routesConfig.protected.app.path}>
+                {landingConfig.actionButtonLabel}
               </Link>
             </Button>
           </div>
           <div className="ml-3 inline-flex">
             <a
-              href={APP_DEFAULT.GITHUB_REPO_URL}
+              href={landingConfig.projectRepoLink}
               target="_blank"
               rel="noreferrer"
             >
               <Button variant="link">
                 <GitHubLogoIcon className="mr-2 size-4" />
-                <span>{LANDING.PROJECT_REPO_LABEL}</span>
+                <span>{landingConfig.projectRepoLabel}</span>
               </Button>
             </a>
           </div>

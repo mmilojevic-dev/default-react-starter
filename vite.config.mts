@@ -15,6 +15,22 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': env
     },
-    plugins: [react(), eslintPlugin(), tsconfigPaths()]
+    plugins: [react(), eslintPlugin(), tsconfigPaths()],
+    build: {
+      rollupOptions: {
+        input: './index.html',
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return id
+                .toString()
+                .split('node_modules/')[1]
+                .split('/')[0]
+                .toString()
+            }
+          }
+        }
+      }
+    }
   }
 })
