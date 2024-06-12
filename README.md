@@ -6,9 +6,9 @@ This is `default-react-starter`, a boilerplate for building scalable and efficie
 
 - **React**: Leverages the latest capabilities of React, including hooks and the new rendering engine, to build dynamic and efficient user interfaces.
 - **TypeScript**: Provides strong typing to enhance code quality and readability, helping to prevent runtime errors and making the codebase easier to refactor and understand.
-- **Vite**: Utilizes Vite for fast development and optimized builds, offering out-of-the-box support for TypeScript, JSX, CSS and more, with instant server start and HMR (Hot Module Replacement).
+- **Vite**: Utilizes Vite for fast development and optimized builds, offering out-of-the-box support for TypeScript, JSX, CSS, and more, with instant server start and HMR (Hot Module Replacement).
 - **Tailwind CSS**: Employs Tailwind CSS for rapid UI development with utility-first styling, allowing developers to build custom designs without leaving your HTML.
-- **Redux Toolkit**: Implements Redux Toolkit for efficient state management, encompassing best practices and simplifying common Redux patterns.
+- **Zustand**: Implements Zustand for efficient state management, simplifying state logic and reducing boilerplate code.
 - **React Query**: Manages and synchronizes asynchronous data with the server state, optimizing data fetching, caching, and synchronization.
 - **ESLint and Prettier**: Ensures code consistency and cleanliness with automated linting and formatting to help maintain code quality standards.
 - **Axios**: Utilizes Axios for making HTTP requests to fetch or save data, an essential part of interacting with external APIs and backend.
@@ -16,12 +16,14 @@ This is `default-react-starter`, a boilerplate for building scalable and efficie
 - **React Hook Form**: Incorporates React Hook Form to manage form state and validation in React applications, enhancing form handling with minimal re-renders.
 - **Zod**: Employs Zod to perform schema validation for TypeScript, ensuring data integrity by validating data shapes at runtime, ideal for use with TypeScript.
 
+
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js version 18 or later.
 - Yarn or npm installed.
+- Docker installed and running.
 
 ### Installation
 
@@ -70,6 +72,17 @@ To preview the production build locally:
 yarn preview
 ```
 
+### Running with Docker
+
+To containerize the application, use the following commands:
+
+```bash
+docker build -t news-aggregator .
+docker run -p 8080:80 news-aggregator
+```
+
+This will build and run the Docker container, making the app accessible at http://localhost:3000.
+
 ### Available Scripts
 
 In the project directory, you can run:
@@ -88,7 +101,7 @@ In the project directory, you can run:
 - TypeScript: TypeScript is used to enhance the development experience with static type checking. This ensures that components and utilities are used correctly, reducing runtime errors and improving code quality.
 
 #### State Management
-- Redux Toolkit: This project uses Redux Toolkit for in-app-memory state management, which simplifies state logic and reduces boilerplate code. It provides tools like slices and thunks, which encapsulate the logic for handling actions and side effects, thereby organizing the global state in a predictable manner.
+- Zustand: This project uses Zustand for in-app-memory state management, which simplifies state logic and reduces boilerplate code. Zustand's API is minimalistic and allows for efficient and straightforward state management.
 - React Query: For server state management, React Query is employed to handle data fetching, caching, and synchronization. This optimizes performance by reducing the number of requests needed and manages server state in the UI effectively.
 
 #### Styling and Design System
