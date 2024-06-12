@@ -1,15 +1,13 @@
-# syntax=docker/dockerfile:1
-
-# Build stage
-FROM node:18-alpine as build
+# Stage 1: Build the React app
+FROM node:18-alpine AS build
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
-RUN yarn build  # Ensure this script builds your app into /dist
+RUN yarn build
 
-# Production stage
-FROM nginx:stable-alpine as production
+# Stage 2: Serve the React app using Nginx
+FROM nginx:stable-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
