@@ -1,7 +1,7 @@
 import { ExclamationTriangleIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { CheckCircleIcon, ShieldCloseIcon, XIcon } from 'lucide-react'
 
-import { Button } from '@/components'
+import { Button } from '@/components/Elements/Button'
 import { NotificationType } from '@/types'
 
 const icons = {

@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { postsConfig } from '@/config'
+import { PostType } from '@/features/posts/types'
 import { axiosClient } from '@/lib/axios'
 import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query'
-
-import { PostType } from '../types'
 
 export const getPosts = (): Promise<PostType[]> => {
   return axiosClient.get(postsConfig.apipath)

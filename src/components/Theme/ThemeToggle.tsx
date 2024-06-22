@@ -1,13 +1,13 @@
 import { Moon, Sun } from 'lucide-react'
 import React from 'react'
 
+import { Button } from '@/components/Elements/Button'
 import {
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components'
+} from '@/components/Elements/DropdownMenu'
 import { themeConfig } from '@/config'
 import { useThemeStore } from '@/store/themeStore'
 import { ThemeEnum } from '@/types'

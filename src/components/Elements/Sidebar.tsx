@@ -1,5 +1,7 @@
-import { Logo, Navigation } from '@/components'
 import { cn } from '@/utils'
+
+import { Logo } from './Logo'
+import { Navigation } from './Navigation'
 
 type SidebarProps = {
   className: string

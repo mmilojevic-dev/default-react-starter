@@ -1,6 +1,6 @@
-import { Button } from '@/components'
+import { Button } from '@/components/Elements/Button'
 import { errorsConfig } from '@/config'
-import { withSuspense } from '@/hoc'
+import { withSuspense } from '@/hoc/withSuspense'
 
 type ErrorFallbackProps = {
   error?: Error

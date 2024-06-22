@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { Button } from '@/components'
-import { useOpenClose } from '@/hooks/useOpenClose'
-
+import { Button } from '@/components/Elements/Button'
 import {
   Drawer,
   DrawerBody,
@@ -10,7 +8,8 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTrigger
-} from '../Elements/Drawer'
+} from '@/components/Elements/Drawer'
+import { useOpenClose } from '@/hooks/useOpenClose'
 
 interface FormDrawerProps extends React.PropsWithChildren {
   isDone: boolean

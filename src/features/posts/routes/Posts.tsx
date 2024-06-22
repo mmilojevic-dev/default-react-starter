@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ContentLayout } from '@/components'
+import { ContentLayout } from '@/components/Layout/ContentLayout'
 import { postsConfig } from '@/config'
-import { withSuspense } from '@/hoc'
+import { withSuspense } from '@/hoc/withSuspense'
 
 const CreatePost = React.lazy(
   () => import('@/features/posts/components/CreatePost')

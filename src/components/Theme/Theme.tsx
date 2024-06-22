@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useThemeStore } from '@/store'
+import { useThemeStore } from '@/store/themeStore'
 import { ThemeEnum } from '@/types'
 
 export const Theme = ({ children }: React.PropsWithChildren) => {

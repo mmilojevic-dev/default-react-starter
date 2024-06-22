@@ -1,8 +1,10 @@
 import { ExclamationTriangleIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
+import { useOpenClose } from '@/hooks/useOpenClose'
+
+import { Button } from './Button'
 import {
-  Button,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -10,8 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from '@/components'
-import { useOpenClose } from '@/hooks/useOpenClose'
+} from './Dialog'
 
 export type ConfirmationDialogProps = {
   triggerButton: React.ReactElement

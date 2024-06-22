@@ -1,8 +1,9 @@
-import { LoadingFallback, Table } from '@/components'
-import { withSuspense } from '@/hoc'
+import { Table } from '@/components/Elements/Table'
+import { LoadingFallback } from '@/components/Layout/LoadingFallback'
+import { usePosts } from '@/features/posts/api/getPosts'
+import { PostType } from '@/features/posts/types'
+import { withSuspense } from '@/hoc/withSuspense'
 
-import { usePosts } from '../api/getPosts'
-import { PostType } from '../types'
 import { DeletePost } from './DeletePost'
 
 const PostsList = () => {

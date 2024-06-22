@@ -1,13 +1,12 @@
 import { QueryKey, useMutation } from '@tanstack/react-query'
 
 import { deletePostConfig, postsConfig } from '@/config'
+import { PostType } from '@/features/posts/types'
 import { axiosClient } from '@/lib/axios'
 import { MutationConfig, queryClient } from '@/lib/react-query'
-import { useNotificationStore } from '@/store'
+import { useNotificationStore } from '@/store/notificationsStore'
 import { NotificationEnum } from '@/types'
 import { getErrorMessage } from '@/utils'
-
-import { PostType } from '../types'
 
 export const deletePost = ({ postId }: { postId: number }) => {
   return axiosClient.delete(`${postsConfig.apipath}/${postId}`)

@@ -1,6 +1,6 @@
 import { ComponentType, Suspense } from 'react'
 
-import { LoadingFallback } from '@/components'
+import { LoadingFallback } from '@/components/Layout/LoadingFallback'
 
 export const withSuspense = <P extends object>(
   Component: ComponentType<P>,

@@ -1,6 +1,6 @@
-import { ContentLayout } from '@/components'
+import { ContentLayout } from '@/components/Layout/ContentLayout'
 import { aboutConfig } from '@/config'
-import { withSuspense } from '@/hoc'
+import { withSuspense } from '@/hoc/withSuspense'
 
 const About = () => {
   const { title, content } = aboutConfig

@@ -2,11 +2,11 @@ import {
   Drawer,
   DrawerBody,
   DrawerContent,
-  DrawerHeader,
-  Logo,
-  Navigation
-} from '@/components'
-import { withSuspense } from '@/hoc'
+  DrawerHeader
+} from '@/components/Elements/Drawer'
+import { Logo } from '@/components/Elements/Logo'
+import { Navigation } from '@/components/Elements/Navigation'
+import { withSuspense } from '@/hoc/withSuspense'
 
 type MobileDrawerProps = {
   isOpen: boolean

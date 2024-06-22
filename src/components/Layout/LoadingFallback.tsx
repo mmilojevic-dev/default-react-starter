@@ -1,4 +1,4 @@
-import { Spinner } from '@/components'
+import { Spinner } from '@/components/Elements/Spinner'
 import { cn } from '@/utils'
 
 interface LoadingFallbackProps {

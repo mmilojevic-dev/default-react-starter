@@ -4,9 +4,9 @@ import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { BrowserRouter } from 'react-router-dom'
 
-import { Theme } from '@/components'
-import { withSuspense } from '@/hoc'
-import { queryClient } from '@/lib'
+import { Theme } from '@/components/Theme/Theme'
+import { withSuspense } from '@/hoc/withSuspense'
+import { queryClient } from '@/lib/react-query'
 
 const ErrorFallback = React.lazy(
   () => import('@/components/Layout/ErrorFallback')

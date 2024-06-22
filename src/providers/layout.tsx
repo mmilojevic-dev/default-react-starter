@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
-import { MainLayout } from '@/components'
-import { withSuspense } from '@/hoc'
+import { MainLayout } from '@/components/Layout/MainLayout'
+import { withSuspense } from '@/hoc/withSuspense'
 
 const LayoutProvider = () => {
   return (
