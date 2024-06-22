@@ -4,6 +4,7 @@ import * as z from 'zod'
 import { Button, Spinner } from '@/components'
 import { Form, FormDrawer, InputField, TextAreaField } from '@/components/Form'
 import { createPostConfig } from '@/config'
+import { withSuspense } from '@/hoc'
 
 import { CreatePostDTO, useCreatePost } from '../api/createPost'
 
@@ -12,7 +13,7 @@ const schema = z.object({
   body: z.string().min(1, 'Required')
 })
 
-export const CreatePost = () => {
+const CreatePost = () => {
   const createPostMutation = useCreatePost()
 
   return (
@@ -60,3 +61,5 @@ export const CreatePost = () => {
     </FormDrawer>
   )
 }
+
+export default withSuspense(CreatePost)

@@ -1,12 +1,10 @@
-import { routesConfig } from '@/config'
-import { lazyImport } from '@/utils'
+import React from 'react'
 
-const { LayoutProvider } = lazyImport(
-  () => import('@/providers'),
-  'LayoutProvider'
-)
-const { About } = lazyImport(() => import('@/features/misc'), 'About')
-const { Posts } = lazyImport(() => import('@/features/posts'), 'Posts')
+import { routesConfig } from '@/config'
+
+const LayoutProvider = React.lazy(() => import('@/providers/layout'))
+const About = React.lazy(() => import('@/features/misc/routes/About'))
+const Posts = React.lazy(() => import('@/features/posts/routes/Posts'))
 
 export const protectedRoutes = [
   {

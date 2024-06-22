@@ -1,10 +1,11 @@
 import { LoadingFallback, Table } from '@/components'
+import { withSuspense } from '@/hoc'
 
 import { usePosts } from '../api/getPosts'
 import { PostType } from '../types'
 import { DeletePost } from './DeletePost'
 
-export const PostsList = () => {
+const PostsList = () => {
   const postsQuery = usePosts()
 
   if (postsQuery.isLoading) {
@@ -38,3 +39,5 @@ export const PostsList = () => {
     />
   )
 }
+
+export default withSuspense(PostsList)

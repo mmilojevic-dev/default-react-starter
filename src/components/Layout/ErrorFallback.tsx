@@ -1,11 +1,12 @@
 import { Button } from '@/components'
 import { errorsConfig } from '@/config'
+import { withSuspense } from '@/hoc'
 
 type ErrorFallbackProps = {
   error?: Error
 }
 
-export const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error }) => {
+const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error }) => {
   return (
     <div
       className="flex h-screen w-screen flex-col items-center justify-center gap-6"
@@ -21,3 +22,5 @@ export const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error }) => {
     </div>
   )
 }
+
+export default withSuspense(ErrorFallback, true)

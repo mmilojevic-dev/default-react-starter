@@ -1,10 +1,17 @@
+import React from 'react'
+
 import { ContentLayout } from '@/components'
 import { postsConfig } from '@/config'
+import { withSuspense } from '@/hoc'
 
-import { CreatePost } from '../components/CreatePost'
-import { PostsList } from '../components/PostsList'
+const CreatePost = React.lazy(
+  () => import('@/features/posts/components/CreatePost')
+)
+const PostsList = React.lazy(
+  () => import('@/features/posts/components/PostsList')
+)
 
-export const Posts = () => {
+const Posts = () => {
   return (
     <ContentLayout title={postsConfig.title}>
       <div className="flex justify-end">
@@ -16,3 +23,5 @@ export const Posts = () => {
     </ContentLayout>
   )
 }
+
+export default withSuspense(Posts)

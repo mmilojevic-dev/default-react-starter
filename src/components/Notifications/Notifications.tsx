@@ -1,7 +1,8 @@
 import { Notification } from '@/components'
+import { withSuspense } from '@/hoc'
 import { useNotificationStore } from '@/store/notificationsStore'
 
-export const Notifications = () => {
+const Notifications = () => {
   const { currentNotifications, removeNotification } = useNotificationStore()
 
   return (
@@ -20,3 +21,5 @@ export const Notifications = () => {
     </div>
   )
 }
+
+export default withSuspense(Notifications)

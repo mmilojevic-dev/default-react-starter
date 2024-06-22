@@ -40,7 +40,7 @@ export const Notification = ({
             <div className="shrink-0">{icons[type]}</div>
             <div className="ml-3 w-0 flex-1 pt-0.5">
               <p className="text-sm font-medium text-foreground">{title}</p>
-              <p className="mt-1 text-sm text-foreground/50">{message}</p>
+              <p className="text-foreground/50 mt-1 text-sm">{message}</p>
             </div>
             <div className="ml-4 flex shrink-0">
               <Button
