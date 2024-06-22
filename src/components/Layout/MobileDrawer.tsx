@@ -2,21 +2,22 @@ import {
   Drawer,
   DrawerBody,
   DrawerContent,
-  DrawerHeader,
-  Logo,
-  Navigation
-} from '@/components'
+  DrawerHeader
+} from '@/components/Elements/Drawer'
+import { Logo } from '@/components/Elements/Logo'
+import { Navigation } from '@/components/Elements/Navigation'
+import { withSuspense } from '@/hoc/withSuspense'
 
 type MobileDrawerProps = {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const MobileDrawer = ({ isOpen, setIsOpen }: MobileDrawerProps) => {
+const MobileDrawer = ({ isOpen, setIsOpen }: MobileDrawerProps) => {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerContent>
-        <DrawerHeader className="h-16 justify-center bg-background/50 px-4">
+        <DrawerHeader className="bg-background/50 h-16 justify-center px-4">
           <Logo withTitle />
         </DrawerHeader>
         <DrawerBody>
@@ -26,3 +27,5 @@ export const MobileDrawer = ({ isOpen, setIsOpen }: MobileDrawerProps) => {
     </Drawer>
   )
 }
+
+export default withSuspense(MobileDrawer)

@@ -1,14 +1,14 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { LoadingFallback, MainLayout } from '@/components'
+import { MainLayout } from '@/components/Layout/MainLayout'
+import { withSuspense } from '@/hoc/withSuspense'
 
-export const LayoutProvider = () => {
+const LayoutProvider = () => {
   return (
     <MainLayout>
-      <React.Suspense fallback={<LoadingFallback />}>
-        <Outlet />
-      </React.Suspense>
+      <Outlet />
     </MainLayout>
   )
 }
+
+export default withSuspense(LayoutProvider, true)

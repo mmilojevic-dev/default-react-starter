@@ -1,18 +1,22 @@
 import { PlusIcon } from 'lucide-react'
 import * as z from 'zod'
 
-import { Button, Spinner } from '@/components'
-import { Form, FormDrawer, InputField, TextAreaField } from '@/components/Form'
+import { Button } from '@/components/Elements/Button'
+import { Spinner } from '@/components/Elements/Spinner'
+import { Form } from '@/components/Form/Form'
+import { FormDrawer } from '@/components/Form/FormDrawer'
+import { InputField } from '@/components/Form/InputField'
+import { TextAreaField } from '@/components/Form/TextareaField'
 import { createPostConfig } from '@/config'
-
-import { CreatePostDTO, useCreatePost } from '../api/createPost'
+import { CreatePostDTO, useCreatePost } from '@/features/posts/api/createPost'
+import { withSuspense } from '@/hoc/withSuspense'
 
 const schema = z.object({
   title: z.string().min(1, 'Required'),
   body: z.string().min(1, 'Required')
 })
 
-export const CreatePost = () => {
+const CreatePost = () => {
   const createPostMutation = useCreatePost()
 
   return (
@@ -60,3 +64,5 @@ export const CreatePost = () => {
     </FormDrawer>
   )
 }
+
+export default withSuspense(CreatePost)

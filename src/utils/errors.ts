@@ -1,5 +1,5 @@
 import { errorsConfig } from '@/config'
-import { useNotificationStore } from '@/store'
+import { useNotificationStore } from '@/store/notificationsStore'
 import { NotificationEnum } from '@/types'
 
 export const getErrorMessage = (error: unknown) => {

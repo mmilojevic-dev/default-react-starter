@@ -2,7 +2,8 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { HomeIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import { Button, Logo } from '@/components'
+import { Button } from '@/components/Elements/Button'
+import { Logo } from '@/components/Elements/Logo'
 import { appDefaultConfig, landingConfig, routesConfig } from '@/config'
 
 export const Landing = () => {

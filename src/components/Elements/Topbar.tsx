@@ -1,6 +1,7 @@
 import { MenuIcon } from 'lucide-react'
 
-import { Button, ThemeToggle } from '@/components'
+import { Button } from '@/components/Elements/Button'
+import { ThemeToggle } from '@/components/Theme/ThemeToggle'
 
 type TopbarProps = {
   setMobileDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -8,7 +9,7 @@ type TopbarProps = {
 
 export const Topbar = ({ setMobileDrawerOpen }: TopbarProps) => {
   return (
-    <div className="relative z-10 flex h-16 shrink-0 bg-popover/15">
+    <div className="bg-popover/15 relative z-10 flex h-16 shrink-0">
       <div className="flex flex-1 justify-between px-4">
         <div className="mr-4 flex items-center md:mr-6">
           <Button

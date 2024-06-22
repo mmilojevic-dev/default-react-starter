@@ -4,30 +4,33 @@ import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { BrowserRouter } from 'react-router-dom'
 
-import {
-  ErrorFallback,
-  LoadingFallback,
-  Notifications,
-  Theme
-} from '@/components'
-import { queryClient } from '@/lib'
+import { Theme } from '@/components/Theme/Theme'
+import { withSuspense } from '@/hoc/withSuspense'
+import { queryClient } from '@/lib/react-query'
+
+const ErrorFallback = React.lazy(
+  () => import('@/components/Layout/ErrorFallback')
+)
+const Notifications = React.lazy(
+  () => import('@/components/Notifications/Notifications')
+)
 
 type AppProviderProps = {
   children: React.ReactNode
 }
 
-export const AppProvider = ({ children }: AppProviderProps) => {
+const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <Theme>
-      <React.Suspense fallback={<LoadingFallback fullscreen />}>
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <QueryClientProvider client={queryClient}>
-            <Notifications />
-            <BrowserRouter>{children}</BrowserRouter>
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </ErrorBoundary>
-      </React.Suspense>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <QueryClientProvider client={queryClient}>
+          <Notifications />
+          <BrowserRouter>{children}</BrowserRouter>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </ErrorBoundary>
     </Theme>
   )
 }
+
+export default withSuspense(AppProvider, true)

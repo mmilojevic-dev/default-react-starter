@@ -1,7 +1,10 @@
 import React from 'react'
 
-import { MobileDrawer, Sidebar, Topbar } from '@/components'
+import { Sidebar } from '@/components/Elements/Sidebar'
+import { Topbar } from '@/components/Elements/Topbar'
 import { useOpenClose } from '@/hooks/useOpenClose'
+
+const MobileDrawer = React.lazy(() => import('./MobileDrawer'))
 
 export const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { isOpen, toggle } = useOpenClose()

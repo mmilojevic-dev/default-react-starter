@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { NavLink } from '@/components'
+import { NavLink } from '@/components/Elements/NavLink'
 import { routesConfig } from '@/config'
 
 export const Navigation: React.FC = () => {

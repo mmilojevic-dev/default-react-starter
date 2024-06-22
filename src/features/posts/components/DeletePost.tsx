@@ -1,9 +1,10 @@
 import { TrashIcon } from 'lucide-react'
 
-import { Button, ConfirmationDialog, Spinner } from '@/components'
+import { Button } from '@/components/Elements/Button'
+import { ConfirmationDialog } from '@/components/Elements/ConfirmationDialog'
+import { Spinner } from '@/components/Elements/Spinner'
 import { deletePostConfig } from '@/config'
-
-import { useDeletePost } from '../api/deletePost'
+import { useDeletePost } from '@/features/posts/api/deletePost'
 
 type DeletePostProps = {
   id: number

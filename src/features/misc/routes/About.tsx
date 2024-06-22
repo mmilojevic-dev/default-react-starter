@@ -1,7 +1,8 @@
-import { ContentLayout } from '@/components'
+import { ContentLayout } from '@/components/Layout/ContentLayout'
 import { aboutConfig } from '@/config'
+import { withSuspense } from '@/hoc/withSuspense'
 
-export const About = () => {
+const About = () => {
   const { title, content } = aboutConfig
   return (
     <ContentLayout title={title}>
@@ -19,3 +20,5 @@ export const About = () => {
     </ContentLayout>
   )
 }
+
+export default withSuspense(About)
