@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "npm run lint --fix",
-    "types": "tsc --project tsconfig.json --noEmit"
+    "types": "tsc --project tsconfig.json --noEmit",
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -42,6 +43,9 @@
   "devDependencies": {
     "@nabla/vite-plugin-eslint": "^2.0.2",
     "@tailwindcss/forms": "^0.5.7",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.12.5",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
@@ -56,6 +60,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
+    "jsdom": "^24.1.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-classnames": "^0.6.5",
@@ -63,6 +68,7 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
   }
 }

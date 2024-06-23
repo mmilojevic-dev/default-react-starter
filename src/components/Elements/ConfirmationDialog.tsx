@@ -48,10 +48,16 @@ export const ConfirmationDialog = ({
         <DialogHeader className="gap-y-4">
           <div className="flex items-center gap-x-2">
             {icon === 'danger' && (
-              <ExclamationTriangleIcon className="size-6 text-destructive" />
+              <ExclamationTriangleIcon
+                className="size-6 text-destructive"
+                aria-label="exclamation-triangle"
+              />
             )}
             {icon === 'info' && (
-              <InfoCircledIcon className="size-6 text-accent" />
+              <InfoCircledIcon
+                className="size-6 text-accent"
+                aria-label="info-circled"
+              />
             )}
             <DialogTitle>{title}</DialogTitle>
           </div>

@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > handles click event 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders correctly with default props 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with default size 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with default variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with destructive variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-destructive/90 bg-destructive text-destructive-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with ghost variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with icon size 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground size-10"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with lg size 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-11 rounded-md px-8"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with link variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with outline variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with secondary variant 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-secondary/80 bg-secondary text-secondary-foreground h-10 px-4 py-2"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button > renders with sm size 1`] = `
+<DocumentFragment>
+  <button
+    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-9 rounded-md px-3"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;

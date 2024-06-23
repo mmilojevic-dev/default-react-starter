@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ConfirmationDialog > calls close function on cancel button click 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r3:"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="closed"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ConfirmationDialog > closes dialog when isDone is true 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:rc:"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="closed"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ConfirmationDialog > renders the trigger button and opens the dialog on click 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r0:"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="open"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ConfirmationDialog > renders with danger icon 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r6:"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="open"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ConfirmationDialog > renders with info icon 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r9:"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="open"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;

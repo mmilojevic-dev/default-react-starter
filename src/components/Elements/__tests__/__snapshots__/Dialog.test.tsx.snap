@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog > closes the dialog when close button is clicked 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r3:"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="closed"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Dialog > renders and opens the dialog when trigger is clicked 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r0:"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="open"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Dialog > renders with custom Tailwind classes 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="radix-:r6:"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 bg-primary text-primary-foreground h-10 px-4 py-2"
+    data-state="open"
+    type="button"
+  >
+    Open Dialog
+  </button>
+</DocumentFragment>
+`;

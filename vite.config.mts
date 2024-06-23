@@ -15,6 +15,11 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': env
     },
+    test: {
+      environment: 'jsdom',
+      globals: true,
+      setupFiles: './src/lib/tests.ts'
+    },
     plugins: [react(), eslintPlugin(), tsconfigPaths()],
     build: {
       rollupOptions: {
